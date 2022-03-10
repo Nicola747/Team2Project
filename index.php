@@ -20,7 +20,7 @@
 
 <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="index.html">Team2 | Vehicle Registration Database</a>
+        <a class="navbar-brand" href="">Team2 | Vehicle Registration Database</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -56,18 +56,29 @@
       </nav>
     <div class="home-header">
         <div class="home-header-section">
-          <h1 id="my-name"><br>Nicola Mihai<br><br><br></h1>
+          <h1 id="my-name"><br>Vehicle Registration Database | Team2<br><br><br></h1>
           <!-- <h2>Background landcape scrolls with its own depth </h2> -->
         </div>
       </div>
       
       <div class="home-section-wrap">
         <div class="home-section">
-            <h1>About This Site</h1>
-            <img id="my-picture" src="media/images/Nicola.JPG" alt="">
+        <h1>About the Database</h1>
+            <!-- <img id="my-picture" src="media/images/Nicola.JPG" alt=""> -->
             <br>
+            
+            <!-- TEXT goes here -->
+            <p>This database contains vehicle, vessel, etc. information along with driver’s license along with detailed and personal information about those two things respectively.</p>         
 
-            <p>I am a conscientious and hardworking individual with a strong passion in the field of computers and programing. <br> If I am not at my computer, you will more than likely find me in the garage or outside looking for something to repair or build.</p>            
+            <h1>About the Assignment</h1>
+            <!-- <img id="my-picture" src="media/images/Nicola.JPG" alt=""> -->
+            <br>
+            
+            <!-- TEXT goes here -->
+            <p>"You will be using a MySql database hosted on UW’s shared server (such as vergil.u.washington.edu), you may use the PHP reference (css475php). 
+                This is a simplified PHP client-server application that generates HTML webpages. The files of project would be stored in a subdirectory of public_html 
+                or student_html folders on UW servers. You will need to customize the config.inc.php file for your DBMS specific parameters much in the same way as you 
+                customized the configuration file for PhpMyAdmin. PHP code calls the mysqli database layer to interact with MySql database."</p>            
         </div>
       </div>
 
