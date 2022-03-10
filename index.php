@@ -45,14 +45,8 @@
                         <a class="dropdown-item" href="https://marine-tractor-294001.wn.r.appspot.com/">Lavender</a> -->
                     </div>
                 </li>
-
-            <li class="nav-item ">
-                <a class="nav-link" href="#">Resume</a>
-            </li>
-            <li class="nav-item ">
-                <a class="nav-link" href="https://www.linkedin.com/in/nicolamihai">LinkedIn</a>
-             </li>
           </ul>
+          <a class="group-names" href="index.html">Aylin Onalan, Nicola Mihai, Kyle Kawahara, David Galenko</a>
           
           <!-- <form class="form-inline mt-2 mt-md-0">
             <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
@@ -69,7 +63,7 @@
       
       <div class="home-section-wrap">
         <div class="home-section">
-            <h1>About Me</h1>
+            <h1>About This Site</h1>
             <img id="my-picture" src="media/images/Nicola.JPG" alt="">
             <br>
 

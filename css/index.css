@@ -15,6 +15,10 @@ h1 {
     text-align: center;
 }
 
+#group-names {
+    text-align: right;
+}
+
 #my-picture {
     display: block;
     margin-left: auto;
