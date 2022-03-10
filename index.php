@@ -46,7 +46,7 @@
                     </div>
                 </li>
           </ul>
-          <a class="group-names" href="index.html">Aylin Onalan, Nicola Mihai, Kyle Kawahara, David Galenko</a>
+          <a class="navbar-brand" id="group-names" href="">Aylin Onalan, Nicola Mihai, Kyle Kawahara, David Galenko</a>
           
           <!-- <form class="form-inline mt-2 mt-md-0">
             <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
