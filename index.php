@@ -68,7 +68,8 @@
             <br>
             
             <!-- TEXT goes here -->
-            <p>This database contains vehicle, vessel, etc. information along with driver’s license along with detailed and personal information about those two things respectively.</p>         
+            <p>This database contains registration information regarding DOL/DMV related items. This includes, but is not limited to, vehicles, vessels, trailers, 
+                etc. It also includes additional information required for those records such as person information (driver license, ownership, address) and vehicle specifications (make, model, etc.).</p>         
 
             <h1>About the Assignment</h1>
             <!-- <img id="my-picture" src="media/images/Nicola.JPG" alt=""> -->
