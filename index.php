@@ -9,8 +9,8 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Home | Nicola Mihai</title>
-  <meta name="description" content="Nicola Mihai's Website">
+  <title>Team2 | Vehicle Registration Database </title>
+  <meta name="description" content="Team2: Group Project - Vehicle Registration Database">
   <meta name="author" content="Nicola Mihai">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
@@ -20,18 +20,32 @@
 
 <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="index.html">Home | Nicola Mihai</a>
+        <a class="navbar-brand" href="index.html">Team2 | Vehicle Registration Database</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item ">
-              <a class="nav-link" href="#">School <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="#">List All Registrations <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item ">
-              <a class="nav-link" href="#">Projects</a>
+              <a class="nav-link" href="#">List All Vehicles</a>
             </li>
+
+            <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Make Changes to Database</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <!-- <a class="dropdown-item" href="https://students.washington.edu/nmihai/bimd233/CapstoneProject/WriteUp/">Capstone Draft</a>
+                        <hr> -->
+                        <a class="dropdown-item" href="https://students.washington.edu/nmihai/bimd233/Labs/Lab1/">Create New Registration</a>
+                        <a class="dropdown-item" href="https://students.washington.edu/nmihai/bimd233/Labs/Lab2/">Remove Registration</a>
+                        <a class="dropdown-item" href="https://students.washington.edu/nmihai/bimd233/Labs/Lab3/">Modify Registration</a>
+                        <!-- <hr>
+                        <a class="dropdown-item" href="https://marine-tractor-294001.wn.r.appspot.com/">Lavender</a> -->
+                    </div>
+                </li>
+
             <li class="nav-item ">
                 <a class="nav-link" href="#">Resume</a>
             </li>
