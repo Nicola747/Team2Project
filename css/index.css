@@ -39,8 +39,9 @@ h1 {
     left: 0;
     top: 0;
     width: 100%;
-    background-image: url("http://webmadewell.com/wp-content/uploads/2018/01/img-bg-sample-parallax-header.jpg");
+    /* background-image: url("http://webmadewell.com/wp-content/uploads/2018/01/img-bg-sample-parallax-header.jpg"); */
     /* background-image: url("../media/images/code-wide.PNG"); */
+    background-image: url("../media/images/20190820_102159.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
