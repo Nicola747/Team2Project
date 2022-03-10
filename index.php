@@ -56,7 +56,7 @@
       </nav>
     <div class="home-header">
         <div class="home-header-section">
-          <h1 id="my-name"><br>Vehicle Registration Database | Team2<br><br><br></h1>
+          <h1 id="my-name"><br>Vehicle Registration Database<br>Team2<br><br><br></h1>
           <!-- <h2>Background landcape scrolls with its own depth </h2> -->
         </div>
       </div>
