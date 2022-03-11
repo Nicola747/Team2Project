@@ -89,7 +89,7 @@ if ($id === null) {
         $stmt->execute();
 		
 		// Process Results Using Cursor
-        $stmt->bind_result($year,$make,$model,$VIN,$ownerIdNumber);
+        $stmt->bind_result($year,$make,$model,$VIN,$ownerIdNumber,$weightLbs,$color,$vehicleType,$fuelType,$registrationNumber,$taxValue,$sellerIdNumber,$ownerIdNumber,$certificationID,$iDDOL);
         echo "<div>";
         while ($stmt->fetch()) {
             echo '<a href="show_customer.php?id='  . $year . '">' . $make . '</a><br>' .
