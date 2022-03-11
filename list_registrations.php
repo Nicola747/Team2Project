@@ -13,7 +13,7 @@ require_once 'config.inc.php';
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="css/index.css?v=1.0">
-    <link rel="stylesheet" href="css/registration.css?v=1.0>
+    <link rel="stylesheet" href="css/registration.css?v=1.0">
 
 </head>
 <body>
@@ -68,7 +68,7 @@ require_once 'config.inc.php';
     }
 
 	// Prepare SQL Statement
-    $sql = "SELECT year,make,model FROM Vehicle ORDER BY year";
+    $sql = "SELECT year,make,model,VIN FROM Vehicle ORDER BY year";
     $stmt = $conn->stmt_init();
     if (!$stmt->prepare($sql)) {
         echo "failed to prepare";
@@ -79,16 +79,16 @@ require_once 'config.inc.php';
         $stmt->execute();
 		
 		// Loop Through Result
-        $stmt->bind_result($year,$make,$model);
+        $stmt->bind_result($year,$make,$model,$VIN);
         // echo "<ul>";
         echo "<div id=\"vehicle-table\">";
         echo "<table class=\"table\">";
         echo "<thead class=theat-dark>";
         echo "<tr>";
-        echo "<th scope=\"col\">#</th>";
-        echo "<th scope=\"col\">First</th>";
-        echo "<th scope=\"col\">Last</th>";
-        echo "<th scope=\"col\">Handle</th>";
+        echo "<th scope=\"col\">Year</th>";
+        echo "<th scope=\"col\">Make</th>";
+        echo "<th scope=\"col\">Model</th>";
+        echo "<th scope=\"col\">VIN Number</th>";
         echo "</tr>";
         echo "</thead>";
         echo "<tbody>";
@@ -101,7 +101,7 @@ require_once 'config.inc.php';
             echo '<td>' .$year. '</td>';
             echo '<td>' .$make. '</td>';
             echo '<td>' .$model. '</td>';
-            echo '<td><a href="show_vehicle.php?id='  . $year . '">' .$year. '</td>';
+            echo '<td><a href="show_vehicle.php?id='  . $VIN . '">' .$VIN. '</td>';
             echo "</tr>";
             // echo '<td><a href="show_vehicle.php?id='  . $year . '">' . $make . '">'. $model . '</a></td>';
             // echo '';
