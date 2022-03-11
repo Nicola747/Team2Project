@@ -9,10 +9,10 @@
 <head>
   <meta charset="utf-8">
 
-  <title>Team2 | Vehicle Registration Database </title>
+  <title>Vehicle Registration Database</title>
   <meta name="description" content="Team2: Group Project - Vehicle Registration Database">
   <meta name="author" content="Nicola Mihai">
-  <link rel="icon" href="media/images/team2icon_v2.png">
+  <link rel="icon" href="media/images/team2icon_v3.png">
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
   <link rel="stylesheet" href="css/index.css?v=1.0">
