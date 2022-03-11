@@ -86,7 +86,7 @@ require_once 'config.inc.php';
         // echo "<ul>";
         echo "<div id=\"vehicle-table\">";
         echo "<table class=\"table table-striped table-bordered table-hover\">";
-        echo "<thead class=theat-dark>";
+        echo "<thead class=theat-dark id=\"thead-dark\">";
         echo "<tr>";
         echo "<th scope=\"col\">Year</th>";
         echo "<th scope=\"col\">Make</th>";

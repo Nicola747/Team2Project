@@ -12,6 +12,14 @@
     margin: auto;
 }
 
+#thead-dark {
+    border-width: 0;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-bottom-width: 5px;
+    border-left-width: 0px;
+}
+
 h2 {
     font-weight: 400;
     font-size: 40px;
@@ -20,12 +28,4 @@ h2 {
 
 button {
     margin: auto;
-}
-
-thead {
-    border-width: 0;
-    border-top-width: 0px;
-    border-right-width: 0px;
-    border-bottom-width: 5px;
-    border-left-width: 0px;
 }
