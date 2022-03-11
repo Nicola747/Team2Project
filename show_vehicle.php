@@ -79,7 +79,7 @@ if ($id === null) {
         // $sql = "SELECT year,make,model,VIN FROM Vehicle V " .
         //     "INNER JOIN Registration R ON V.make = R.make WHERE VIN = ?";
 
-        $sql = "SELECT V.*,R.* FROM Vehicle V INNER JOIN Registration R ON V.VIN = R.VIN WHERE R.VIN = ?";
+        $sql = "SELECT V.*,registrationNumber,taxValue,sellerIdNumber,ownerIdNumber,certificationID,iDDOL FROM Vehicle V INNER JOIN Registration R ON V.VIN = R.VIN WHERE R.VIN = ?";
         $stmt = $conn->stmt_init();
         if (!$stmt->prepare($sql)) {
             echo "failed to prepare";
@@ -93,7 +93,7 @@ if ($id === null) {
 
             // Process Results Using Cursor
             // $stmt->bind_result($year,$make,$model,$VIN,$ownerIdNumber,$weightLbs,$color,$vehicleType,$fuelType,$registrationNumber,$taxValue,$sellerIdNumber,$ownerIdNumber,$certificationID,$iDDOL);
-            $stmt->bind_result($VIN, $year, $make, $model, $color, $weightLbs, $vehicleType, $fuelType, $VIN, $registrationNumber,$taxValue,$sellerIdNumber,$ownerIdNumber,$certificationID,$iDDOL);
+            $stmt->bind_result($VIN, $year, $make, $model, $color, $weightLbs, $vehicleType, $fuelType, $registrationNumber,$taxValue,$sellerIdNumber,$ownerIdNumber,$certificationID,$iDDOL);
 
             echo "<div id=\"vehicle-info-table\">";
             echo "<table class=\"table table-striped table-bordered table-hover\">";
@@ -107,6 +107,12 @@ if ($id === null) {
             echo "<th scope=\"col\">Weight (lbs)</th>";
             echo "<th scope=\"col\">Vehicle Type</th>";
             echo "<th scope=\"col\">Fuel Type</th>";
+            echo "<th scope=\"col\">Registration Number</th>";
+            echo "<th scope=\"col\">Tax Value</th>";
+            echo "<th scope=\"col\">Seller ID</th>";
+            echo "<th scope=\"col\">Owner ID</th>";
+            echo "<th scope=\"col\">Certification ID</th>";
+            echo "<th scope=\"col\">DOL ID</th>";
             echo "</tr>";
             echo "</thead>";
             echo "<tbody>";
