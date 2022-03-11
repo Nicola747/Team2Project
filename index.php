@@ -38,9 +38,9 @@
                     <div class="dropdown-menu" aria-labelledby="dropdown01">
                         <!-- <a class="dropdown-item" href="https://students.washington.edu/nmihai/bimd233/CapstoneProject/WriteUp/">Capstone Draft</a>
                         <hr> -->
-                        <a class="dropdown-item" href="https://students.washington.edu/nmihai/bimd233/Labs/Lab1/">Create New Registration</a>
-                        <a class="dropdown-item" href="https://students.washington.edu/nmihai/bimd233/Labs/Lab2/">Remove Registration</a>
-                        <a class="dropdown-item" href="https://students.washington.edu/nmihai/bimd233/Labs/Lab3/">Modify Registration</a>
+                        <a class="dropdown-item" href="create_registration.php">Create New Registration</a>
+                        <a class="dropdown-item" href="remove_registration.php">Remove Registration</a>
+                        <a class="dropdown-item" href="modify_registration.php">Modify Registration</a> 
                         <!-- <hr>
                         <a class="dropdown-item" href="https://marine-tractor-294001.wn.r.appspot.com/">Lavender</a> -->
                     </div>
