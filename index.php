@@ -27,10 +27,10 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item ">
-              <a class="nav-link" href="#">List All Registrations <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="list_products.php">List All Registrations <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item ">
-              <a class="nav-link" href="#">List All Vehicles</a>
+              <a class="nav-link" href="list_customers.php">List All Vehicles</a>
             </li>
 
             <li class="nav-item dropdown">
@@ -56,7 +56,7 @@
       </nav>
     <div class="home-header">
         <div class="home-header-section">
-          <h1 id="my-name"><br>Vehicle Registration Database<br>Team2<br><br><br></h1>
+          <h1 id="my-name"><br>Vehicle Registration Database<br>Team 2<br><br><br></h1>
           <!-- <h2>Background landcape scrolls with its own depth </h2> -->
         </div>
       </div>
