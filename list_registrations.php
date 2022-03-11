@@ -79,11 +79,22 @@ require_once 'config.inc.php';
 		
 		// Loop Through Result
         $stmt->bind_result($year,$make,$model);
-        echo "<ul>";
+        // echo "<ul>";
+        echo "<table class="table">"
+        echo "<thead class=theat-dark>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First</th>
+          <th scope="col">Last</th>
+          <th scope="col">Handle</th>
+        </tr>
+        </thead>
+    "
         while ($stmt->fetch()) {
             echo '<li><a href="show_vehicle.php?id='  . $year . '">' . $make . '">'. $model . '</a></li>';
         }
-        echo "</ul>";
+        // echo "</ul>";
+        echo "</table>"
     }
 
 	// Close Connection
