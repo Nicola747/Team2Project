@@ -81,7 +81,7 @@ require_once 'config.inc.php';
 		// Loop Through Result
         $stmt->bind_result($year,$make,$model);
         // echo "<ul>";
-        echo "<div id=\"vehicle-table\">"
+        echo "<div id=\"vehicle-table\">";
         echo "<table class=\"table\">";
         echo "<thead class=theat-dark>";
         echo "<tr>";
@@ -97,7 +97,7 @@ require_once 'config.inc.php';
         }
         // echo "</ul>";
         echo "</table>";
-        echo "</div>"
+        echo "</div>";
     }
 
 	// Close Connection
