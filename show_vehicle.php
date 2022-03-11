@@ -93,7 +93,7 @@ if ($id === null) {
 
             // Process Results Using Cursor
             // $stmt->bind_result($year,$make,$model,$VIN,$ownerIdNumber,$weightLbs,$color,$vehicleType,$fuelType,$registrationNumber,$taxValue,$sellerIdNumber,$ownerIdNumber,$certificationID,$iDDOL);
-            $stmt->bind_result($VIN, $year, $make, $model, $color, $weightLbs, $vehicleType, $fuelType, $registrationNumber,$taxValue,$sellerIdNumber,$ownerIdNumber,$certificationID,$iDDOL);
+            $stmt->bind_result($VIN, $year, $make, $model, $color, $weightLbs, $vehicleType, $fuelType, $VIN, $registrationNumber,$taxValue,$sellerIdNumber,$ownerIdNumber,$certificationID,$iDDOL);
 
             echo "<div id=\"vehicle-info-table\">";
             echo "<table class=\"table table-striped table-bordered table-hover\">";
