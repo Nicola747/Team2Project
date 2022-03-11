@@ -3,6 +3,11 @@
     margin: auto;
 }
 
+#vehicle-info-table {
+    width: 1500px;
+    margin: auto;
+}
+
 h2 {
     font-weight: 400;
     font-size: 40px;
