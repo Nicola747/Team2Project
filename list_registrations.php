@@ -57,7 +57,7 @@ require_once 'config.inc.php';
 <div>
     <br>
     <br>
-    <h2>Full Registration List</h2>
+    <h2 id="table-title">Full Registration List</h2>
     <?php
     // Create connection
     $conn = new mysqli($servername, $username, $password, $database, $port);
