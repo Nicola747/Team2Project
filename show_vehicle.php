@@ -75,7 +75,7 @@ if ($id === null) {
     // $sql = "SELECT year,make,model,VIN FROM Vehicle V " .
     //     "INNER JOIN Registration R ON V.make = R.make WHERE VIN = ?";
 
-    $sql = "select V.* from Vehicle V inner join Registration R on V.VIN = R.VIN where R.VIN = ?";
+    $sql = "SELECT V.* FROM Vehicle V INNER JOIN Registration R ON V.VIN = R.VIN WHERE R.VIN = ?";
     $stmt = $conn->stmt_init();
     if (!$stmt->prepare($sql)) {
         echo "failed to prepare";
@@ -89,7 +89,8 @@ if ($id === null) {
         $stmt->execute();
 		
 		// Process Results Using Cursor
-        $stmt->bind_result($year,$make,$model,$VIN,$ownerIdNumber,$weightLbs,$color,$vehicleType,$fuelType,$registrationNumber,$taxValue,$sellerIdNumber,$ownerIdNumber,$certificationID,$iDDOL);
+        // $stmt->bind_result($year,$make,$model,$VIN,$ownerIdNumber,$weightLbs,$color,$vehicleType,$fuelType,$registrationNumber,$taxValue,$sellerIdNumber,$ownerIdNumber,$certificationID,$iDDOL);
+        $stmt->bind_result($year,$make,$model,$VIN,$weightLbs,$color,$vehicleType,$fuelType);
         echo "<div>";
         while ($stmt->fetch()) {
             echo '<a href="show_customer.php?id='  . $year . '">' . $make . '</a><br>' .
