@@ -37,7 +37,7 @@ if ($id === null) {
 
 <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="">Team2 | Vehicle Registration Database</a>
+        <a class="navbar-brand" href="index.php">Team2 | Vehicle Registration Database</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -110,7 +110,8 @@ if ($id === null) {
             //     echo '<a href="show_customer.php?id='  . $year . '">' . $make . '</a>' .
             //      $model . ',' . $VIN . '  ' . $ownerIdNumber;
             // }
-
+            
+            while ($stmt->fetch()) {
             echo "<tr>";
             echo '<td>' . $VIN . '</td>';
             echo '<td>' . $year . '</td>';
@@ -126,7 +127,8 @@ if ($id === null) {
             echo '<td>' . $certificationID . '</td>';
             echo '<td>' . $iDDOL . '</td>';
             echo "</tr>";
-
+            }
+            
             echo "</tbody>";
             echo "</table>";
             echo "</div>";
