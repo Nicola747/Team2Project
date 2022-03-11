@@ -23,8 +23,13 @@ if ($id === null) {
 ?>
 <html>
 <head>
-    <title>Sample PHP Database Program</title>
-    <link rel="stylesheet" href="base.css">
+    <title>Show Registration Information</title>
+    <meta name="description" content="Team2: Group Project - Vehicle Registration Database">
+    <meta name="author" content="Nicola Mihai">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/index.css?v=1.0">
+    <link rel="stylesheet" href="css/registration.css?v=1.0">
 </head>
 <body>
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">

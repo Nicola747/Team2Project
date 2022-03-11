@@ -7,7 +7,7 @@ require_once 'config.inc.php';
 ?>
 <html>
 <head>
-    <title>Sample PHP Database Program</title>
+    <title>Show All Registrations</title>
     <meta name="description" content="Team2: Group Project - Vehicle Registration Database">
     <meta name="author" content="Nicola Mihai">
 
