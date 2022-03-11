@@ -81,7 +81,7 @@ require_once 'config.inc.php';
         $stmt->bind_result($year,$make,$model);
         echo "<ul>";
         while ($stmt->fetch()) {
-            echo '<li><a href="show_vehicle.php?id='  . $CustomerNumber . '">' . $CustomerName . '</a></li>';
+            echo '<li><a href="show_vehicle.php?id='  . $year . '">' . $make . '">'. $model . '</a></li>';
         }
         echo "</ul>";
     }
