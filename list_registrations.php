@@ -80,21 +80,21 @@ require_once 'config.inc.php';
 		// Loop Through Result
         $stmt->bind_result($year,$make,$model);
         // echo "<ul>";
-        echo "<table class=\"table\">"
-        echo "<thead class=theat-dark>"
-        echo "<tr>"
-        echo "<th scope=\"col\">#</th>"
-        echo "<th scope=\"col\">First</th>"
-        echo "<th scope=\"col\">Last</th>"
-        echo "<th scope=\"col\">Handle</th>"
-        echo "</tr>"
-        echo "</thead>"
+        echo "<table class=\"table\">";
+        echo "<thead class=theat-dark>";
+        echo "<tr>";
+        echo "<th scope=\"col\">#</th>";
+        echo "<th scope=\"col\">First</th>";
+        echo "<th scope=\"col\">Last</th>";
+        echo "<th scope=\"col\">Handle</th>";
+        echo "</tr>";
+        echo "</thead>";
           
         while ($stmt->fetch()) {
             echo '<li><a href="show_vehicle.php?id='  . $year . '">' . $make . '">'. $model . '</a></li>';
         }
         // echo "</ul>";
-        echo "</table>"
+        echo "</table>";
     }
 
 	// Close Connection
