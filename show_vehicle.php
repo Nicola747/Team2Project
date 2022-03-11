@@ -148,7 +148,7 @@ if ($id === null) {
                 <a href="update_customer.php?id=<?= $ownerIdNumber ?>">Update Registration</a>
             </div> -->
 
-            <div id="buttons> 
+            <div id="buttons"> 
             <button type=" button" class="btn btn-primary" data-toggle="modal" data-target="#owner-info">
                 View Owner Info
                 </button>
