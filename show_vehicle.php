@@ -152,7 +152,7 @@ if ($id === null) {
                 <a href="update_customer.php?id=<?= $ownerIdNumber ?>">Update Registration</a>
             </div> -->
 
-            <div id="buttons">
+            <!-- <div id="buttons">
                 <button type=" button" class="btn btn-primary" data-toggle="modal" data-target="#owner-info">
                     View Owner Info
                 </button>
@@ -162,7 +162,7 @@ if ($id === null) {
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Mymodal">
                     Update Registration
                 </button>
-            </div>
+            </div> -->
 
 
             <div class="modal fade" id="owner-info">
@@ -191,7 +191,7 @@ if ($id === null) {
                 </div>
             </div>
 
-            <!-- Button trigger modal -->
+            Button trigger modal
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                 Launch demo modal
             </button>
