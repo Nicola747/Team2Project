@@ -93,11 +93,16 @@ require_once 'config.inc.php';
         echo "</thead>";
         echo "<tbody>
                 <tr>";
-        echo "<th scope=\"row\">1</th>";
+        
           
         while ($stmt->fetch()) {
             // echo '<li><a href="show_vehicle.php?id='  . $year . '">' . $make . '">'. $model . '</a></li>';
-            echo '<td><a href="show_vehicle.php?id='  . $year . '">' . $make . '">'. $model . '</a></td>';
+            // echo "<th scope=\"row\">1</th>";
+            echo '<td>' .$year '</td>';
+            echo '<td>' .$make '</td>';
+            echo '<td>' .$model '</td>';
+            echo '<td><a href="show_vehicle.php?id='  . $year . '">' .$year '</td>';
+            // echo '<td><a href="show_vehicle.php?id='  . $year . '">' . $make . '">'. $model . '</a></td>';
             // echo '';
         }
         // echo "</ul>";
