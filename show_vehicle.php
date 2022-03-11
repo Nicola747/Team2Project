@@ -99,10 +99,14 @@ if ($id === null) {
             echo "<table class=\"table table-striped table-bordered table-hover\">";
             echo "<thead class=theat-dark>";
             echo "<tr>";
+            echo "<th scope=\"col\">VIN Number</th>";
             echo "<th scope=\"col\">Year</th>";
             echo "<th scope=\"col\">Make</th>";
             echo "<th scope=\"col\">Model</th>";
-            echo "<th scope=\"col\">VIN Number</th>";
+            echo "<th scope=\"col\">Color</th>";
+            echo "<th scope=\"col\">Weight (lbs)</th>";
+            echo "<th scope=\"col\">Vehicle Type</th>";
+            echo "<th scope=\"col\">Fuel Type</th>";
             echo "</tr>";
             echo "</thead>";
             echo "<tbody>";
