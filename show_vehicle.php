@@ -73,7 +73,7 @@ if ($id === null) {
 
 	// Prepare SQL using Parameterized Form (Safe from SQL Injections)
     $sql = "SELECT year,make,model,VIN FROM Vehicle V " .
-        "INNER JOIN Registration R ON V.VIN = R.VIN WHERE ownerIdNumber = ?";
+        "INNER JOIN Registration R ON V.make = R.make WHERE VIN = ?";
     $stmt = $conn->stmt_init();
     if (!$stmt->prepare($sql)) {
         echo "failed to prepare";
