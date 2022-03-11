@@ -27,11 +27,35 @@ if ($id === null) {
     <link rel="stylesheet" href="base.css">
 </head>
 <body>
-<?php
-require_once 'header.inc.php';
-?>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="">Team2 | Vehicle Registration Database</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item ">
+              <a class="nav-link" href="list_registrations.php">List All Registrations <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="list_vehicles.php">List All Vehicles</a>
+            </li>
+
+            <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Make Changes to Database</a>
+                    <div class="dropdown-menu" aria-labelledby="dropdown01">
+                        <a class="dropdown-item" href="create_registration.php">Create New Registration</a>
+                        <a class="dropdown-item" href="remove_registration.php">Remove Registration</a>
+                        <a class="dropdown-item" href="modify_registration.php">Modify Registration</a> 
+                    </div>
+                </li>
+          </ul>
+          <a class="navbar-brand" id="group-names" href="">Aylin Onalan, Nicola Mihai, Kyle Kawahara, David Galenko</a>
+
+        </div>
+      </nav>
 <div>
-    <h2>Show Customer</h2>
+    <h2>Show Registration Information</h2>
     <?php
 
     // Create connection
@@ -43,7 +67,8 @@ require_once 'header.inc.php';
     }
 
 	// Prepare SQL using Parameterized Form (Safe from SQL Injections)
-    $sql = "SELECT VIN,year,make,model,vehicleType FROM Vehicle V ";
+    $sql = "SELECT year,make,model,VIN FROM Vehicle V " .
+        "INNER JOIN Registration R ON V.VIN = R.VIN WHERE ownerIdNumber = ?";
     $stmt = $conn->stmt_init();
     if (!$stmt->prepare($sql)) {
         echo "failed to prepare";
@@ -57,16 +82,16 @@ require_once 'header.inc.php';
         $stmt->execute();
 		
 		// Process Results Using Cursor
-        $stmt->bind_result($VIN,$year,$make,$model,$vehicleType);
+        $stmt->bind_result($year,$make,$model,$VIN,$ownerIdNumber);
         echo "<div>";
         while ($stmt->fetch()) {
-            echo '<a href="show_customer.php?id='  . $VIN . '">' . $year . '</a><br>' .
-             $make . ',' . $model . '  ' . $vehicleType;
+            echo '<a href="show_customer.php?id='  . $year . '">' . $make . '</a><br>' .
+             $model . ',' . $VIN . '  ' . $ownerIdNumber;
         }
         echo "</div>";
     ?>
         <div>
-            <a href="update_customer.php?id=<?= $VIN ?>">Update Customer</a>
+            <a href="update_customer.php?id=<?= $ownerIdNumber ?>">Update Registration</a>
         </div>
     <?php
     }

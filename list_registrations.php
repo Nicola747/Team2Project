@@ -57,6 +57,8 @@ require_once 'config.inc.php';
 <div>
     <br>
     <br>
+    <br>
+    <br>
     <h2 id="table-title">Full Registration List</h2>
     <?php
     // Create connection
