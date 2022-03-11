@@ -91,11 +91,18 @@ require_once 'config.inc.php';
         echo "<th scope=\"col\">Handle</th>";
         echo "</tr>";
         echo "</thead>";
+        echo "<tbody>
+                <tr>";
+        echo "<th scope=\"row\">1</th>";
           
         while ($stmt->fetch()) {
-            echo '<li><a href="show_vehicle.php?id='  . $year . '">' . $make . '">'. $model . '</a></li>';
+            // echo '<li><a href="show_vehicle.php?id='  . $year . '">' . $make . '">'. $model . '</a></li>';
+            echo '<td><a href="show_vehicle.php?id='  . $year . '">' . $make . '">'. $model . '</a></td>';
+            // echo '';
         }
         // echo "</ul>";
+        echo "</tr>
+        </tbody>";
         echo "</table>";
         echo "</div>";
     }
