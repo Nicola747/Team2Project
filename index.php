@@ -27,10 +27,10 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item ">
-              <a class="nav-link" href="list_products.php">List All Registrations <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="list_registrations.php">List All Registrations <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item ">
-              <a class="nav-link" href="list_customers.php">List All Vehicles</a>
+              <a class="nav-link" href="list_vehicles.php">List All Vehicles</a>
             </li>
 
             <li class="nav-item dropdown">
