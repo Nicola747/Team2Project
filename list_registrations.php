@@ -54,7 +54,9 @@ require_once 'config.inc.php';
       </nav>
 
 <div>
-    <h2>Customer List</h2>
+    <br>
+    <br>
+    <h2>Full Registration List</h2>
     <?php
     // Create connection
     $conn = new mysqli($servername, $username, $password, $database, $port);
@@ -65,7 +67,7 @@ require_once 'config.inc.php';
     }
 
 	// Prepare SQL Statement
-    $sql = "SELECT CustomerNumber,CustomerName FROM customer ORDER BY CustomerName";
+    $sql = "SELECT year,make,model FROM Vehicle ORDER BY year";
     $stmt = $conn->stmt_init();
     if (!$stmt->prepare($sql)) {
         echo "failed to prepare";
@@ -76,10 +78,10 @@ require_once 'config.inc.php';
         $stmt->execute();
 		
 		// Loop Through Result
-        $stmt->bind_result($CustomerNumber,$CustomerName);
+        $stmt->bind_result($year,$make,$model);
         echo "<ul>";
         while ($stmt->fetch()) {
-            echo '<li><a href="show_customer.php?id='  . $CustomerNumber . '">' . $CustomerName . '</a></li>';
+            echo '<li><a href="show_vehicle.php?id='  . $CustomerNumber . '">' . $CustomerName . '</a></li>';
         }
         echo "</ul>";
     }
