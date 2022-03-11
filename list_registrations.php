@@ -82,7 +82,7 @@ require_once 'config.inc.php';
         $stmt->bind_result($year,$make,$model,$VIN);
         // echo "<ul>";
         echo "<div id=\"vehicle-table\">";
-        echo "<table class=\"table\">";
+        echo "<table class=\"table table-striped table-bordered table-hover\">";
         echo "<thead class=theat-dark>";
         echo "<tr>";
         echo "<th scope=\"col\">Year</th>";
