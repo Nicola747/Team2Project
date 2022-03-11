@@ -8,6 +8,12 @@ h1 {
     text-align: center;
 }
 
+footer {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    text-align: center;
+}
+
 #my-name {
     font-weight: 400;
     text-transform: uppercase;
