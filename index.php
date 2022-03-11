@@ -89,5 +89,8 @@
 
 
   <script src="js/index-scrips.js"></script>
+  <footer class="container">
+        <p>© Team 2 2022-2023</p>
+    </footer>
 </body>
 </html>
