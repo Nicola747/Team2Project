@@ -13,6 +13,7 @@ require_once 'config.inc.php';
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="css/index.css?v=1.0">
+    <link rel="stylesheet" href="css/registration.css?v=1.0>
 
 </head>
 <body>
@@ -80,6 +81,7 @@ require_once 'config.inc.php';
 		// Loop Through Result
         $stmt->bind_result($year,$make,$model);
         // echo "<ul>";
+        echo "<div id=\"vehicle-table\">"
         echo "<table class=\"table\">";
         echo "<thead class=theat-dark>";
         echo "<tr>";
@@ -95,6 +97,7 @@ require_once 'config.inc.php';
         }
         // echo "</ul>";
         echo "</table>";
+        echo "</div>"
     }
 
 	// Close Connection
