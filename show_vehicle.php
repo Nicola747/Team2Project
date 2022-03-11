@@ -93,7 +93,7 @@ if ($id === null) {
 
             // Process Results Using Cursor
             // $stmt->bind_result($year,$make,$model,$VIN,$ownerIdNumber,$weightLbs,$color,$vehicleType,$fuelType,$registrationNumber,$taxValue,$sellerIdNumber,$ownerIdNumber,$certificationID,$iDDOL);
-            $stmt->bind_result($year, $make, $model, $VIN, $weightLbs, $color, $vehicleType, $fuelType);
+            $stmt->bind_result($VIN, $year, $make, $model, $color, $weightLbs, $vehicleType, $fuelType);
 
             echo "<div id=\"vehicle-info-table\">";
             echo "<table class=\"table table-striped table-bordered table-hover\">";
@@ -118,6 +118,7 @@ if ($id === null) {
             echo '<td>' . $make . '</td>';
             echo '<td>' . $model . '</td>';
             echo '<td>' . $color . '</td>';
+            echo '<td>' . $weightLbs . '</td>';
             echo '<td>' . $vehicleType . '</td>';
             echo '<td>' . $fuelType . '</td>';
             echo '<td>' . $registrationNumber . '</td>';
@@ -128,7 +129,7 @@ if ($id === null) {
             echo '<td>' . $iDDOL . '</td>';
             echo "</tr>";
             }
-            
+
             echo "</tbody>";
             echo "</table>";
             echo "</div>";
