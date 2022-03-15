@@ -102,7 +102,7 @@ require_once 'config.inc.php';
         echo "</table>";
 
         echo "<div id=\"text-input\">";
-        echo "<a href=\"filter_registrations.php?id=\" class=\"btn btn-primary\" target=\"_blank\" rel=\noopener noreferrer\">Filter by VIN</a>";
+        echo "<a href=\"filter_registrations.php?id=\" class=\"btn btn-primary\">Filter by VIN</a>";
         echo "</div>";
 
         echo "</div>";
