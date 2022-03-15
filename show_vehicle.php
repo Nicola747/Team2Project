@@ -149,21 +149,6 @@ if ($id === null) {
             echo "</table>";
             echo "</div>";
         ?>
-            <!-- <div>
-                <a href="update_customer.php?id=<?= $ownerIdNumber ?>">Update Registration</a>
-            </div> -->
-
-            <!-- <div id="buttons">
-                <button type=" button" class="btn btn-primary" data-toggle="modal" data-target="#owner-info">
-                    View Owner Info
-                </button>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Mymodal">
-                    View Seller Info
-                </button>
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Mymodal">
-                    Update Registration
-                </button>
-            </div> -->
 
 
 
