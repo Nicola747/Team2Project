@@ -62,7 +62,7 @@ require_once 'config.inc.php';
       $VIN_num = $_GET['VIN-num'];
       //echo $_POST['subject']; 
       if ($VIN_num === null)
-        echo "<div><i>Specify a new name</i></div>";
+        echo "<div><i>Specify a new name NULL</i></div>";
       else if ($VIN_num === false)
         echo "<div><i>Specify a new name</i></div>";
       // else if (trim($VIN_num) === "")
@@ -72,17 +72,17 @@ require_once 'config.inc.php';
       $VIN_num = $_GET['VIN-num'];
 
         /* perform search using safe parameterized sql */
-        $sql = "SELECT year,make,model,VIN FROM Vehicle WHERE VIN LIKE '%VIN-num%'";
+        $sql = "SELECT year,make,model,VIN FROM Vehicle WHERE VIN LIKE '%?%'";
         $stmt = $conn->stmt_init();
         if (!$stmt->prepare($sql)) {
           echo "failed to prepare";
         } else {
 
           // Bind user input to statement
-          //$stmt->bind_param('ss',$VIN);
+          $stmt->bind_param('ss',$VIN_num);
 
           // Loop Through Result
-          $stmt->bind_result($year, $make, $model, $VIN);
+          $stmt->bind_result($year, $make, $model, $VIN_num);
 
           while ($stmt->fetch()) {
             // echo '<li><a href="show_vehicle.php?id='  . $year . '">' . $make . '">'. $model . '</a></li>';
