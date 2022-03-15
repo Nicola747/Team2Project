@@ -26,6 +26,18 @@ button {
     margin: auto;
 }
 
-modal {
-    margin: auto;
+
+/* Styling modal */
+
+
+/* .modal:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+} */
+
+.modal-dialog {
+    display: inline-block;
+    vertical-align: middle;
 }
