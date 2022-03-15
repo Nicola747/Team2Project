@@ -80,7 +80,7 @@ require_once 'config.inc.php';
         } else {
 
           // Bind user input to statement
-          $stmt->bind_param('ss',$VIN);
+          // $stmt->bind_param('ss',$VIN);
 
           // Loop Through Result
           $stmt->bind_result($year, $make, $model, $VIN_num);
