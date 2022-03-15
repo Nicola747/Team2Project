@@ -62,6 +62,7 @@ require_once 'config.inc.php';
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $CustomerName = $_POST['CustomerName'];
       //echo $_POST['subject']; 
+      session_start();
       echo $_SESSION['myVIN'];
       if ($CustomerName === null)
         echo "<div><i>Specify a new name</i></div>";
