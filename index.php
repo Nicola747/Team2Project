@@ -28,31 +28,10 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item ">
-              <a class="nav-link" href="list_registrations.php">List All Registrations <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="list_registrations.php">List All Vehicles<span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="list_vehicles.php">List All Vehicles</a>
-            </li>
-
-            <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Make Changes to Database</a>
-                    <div class="dropdown-menu" aria-labelledby="dropdown01">
-                        <!-- <a class="dropdown-item" href="https://students.washington.edu/nmihai/bimd233/CapstoneProject/WriteUp/">Capstone Draft</a>
-                        <hr> -->
-                        <a class="dropdown-item" href="create_registration.php">Create New Registration</a>
-                        <a class="dropdown-item" href="remove_registration.php">Remove Registration</a>
-                        <a class="dropdown-item" href="modify_registration.php">Modify Registration</a> 
-                        <!-- <hr>
-                        <a class="dropdown-item" href="https://marine-tractor-294001.wn.r.appspot.com/">Lavender</a> -->
-                    </div>
-                </li>
           </ul>
           <a class="navbar-brand" id="group-names" href="">Aylin Onalan, Nicola Mihai, Kyle Kawahara, David Galenko</a>
-          
-          <!-- <form class="form-inline mt-2 mt-md-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form> -->
         </div>
       </nav>
     <div class="home-header">
