@@ -45,6 +45,7 @@ require_once 'config.inc.php';
     <h2>Filter by VIN</h2>
     <?php
 
+    
     // Create connection
     $conn = new mysqli($servername, $username, $password, $database, $port);
 
@@ -65,8 +66,8 @@ require_once 'config.inc.php';
             echo "<div><i>Specify a new name</i></div>";
         else {
 			
-            /* perform update using safe parameterized sql */
-            $sql = "SELECT year,make,model,VIN FROM Vehicle WHERE VIN LIKE '%?%'";
+            /* perform search using safe parameterized sql */
+            $sql = "SELECT year,make,model,VIN FROM Vehicle WHERE VIN LIKE '%JS3%'";
             $stmt = $conn->stmt_init();
             if (!$stmt->prepare($sql)) {
                 echo "failed to prepare";
