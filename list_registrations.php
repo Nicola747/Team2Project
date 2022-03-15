@@ -105,7 +105,6 @@ require_once 'config.inc.php';
         // echo '<a href="show_vehicle.php?id='  . $VIN . '">Filter by VIN</a>';
         echo '<a href="filter_registrations.php">Filter by VIN</a>';
         echo "</div>";
-
         echo "</div>";
 
         
