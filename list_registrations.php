@@ -103,11 +103,10 @@ require_once 'config.inc.php';
 
         echo "<div id=\"text-input\">";
         echo "<form action=\"filter_registrations.php?id=\" method=\"post\">
-            <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Filter\" name=\"psw\">
-            <button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Search</button>
+            <button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Filter by VIN</button>
         </form>";
         echo "</div>";
-        
+
         echo "</div>";
 
         
