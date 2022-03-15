@@ -54,9 +54,9 @@ if ($id === null) {
                 <li class="nav-item ">
                     <a class="nav-link" href="list_vehicles.php">List All Vehicles</a>
                 </li>
-
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Make Changes to Database</a>
+                <!-- http://example.com -->
+                <li class="nav-item dropdown">  
+                    <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Make Changes to Database</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown01">
                         <a class="dropdown-item" href="create_registration.php">Create New Registration</a>
                         <a class="dropdown-item" href="remove_registration.php">Remove Registration</a>
