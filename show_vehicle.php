@@ -1,7 +1,12 @@
 <?php
+/**
+ * Team 2
+ * 
+ * Aylin Onalan, Nicola Mihai, Kyle Kawahara, David Galenko
+ */
 
 require_once 'config.inc.php';
-// Get Customer Number
+// Get VIN Number
 $id = $_GET['id'];
 if ($id === "") {
     header('location: list_customers.php');
@@ -93,7 +98,7 @@ if ($id === null) {
           }
         }
       }
-
+        // THREE-WAY JOIN on Owner, Registration, DriverLicenseID
         $sql = "SELECT V.*,registrationNumber,taxValue,name,certificationID,iDDOL FROM Vehicle V 
         INNER JOIN Registration R ON V.VIN = R.VIN INNER JOIN Owner O ON R.ownerIdNumber = O.idNumber 
         INNER JOIN DriverLicenseID DL ON O.idNumber = DL.idNumber WHERE R.VIN = ?";
@@ -109,6 +114,7 @@ if ($id === null) {
             $stmt->execute();
 
             $stmt->bind_result($VIN, $year, $make, $model, $color, $weightLbs, $vehicleType, $fuelType, $registrationNumber, $taxValue, $name, $certificationID, $iDDOL);
+            // build table head
             echo "<br><br>";
             echo "<div id=\"vehicle-info-table\">";
             echo "<table class=\"table table-striped table-bordered table-hover\">";
@@ -131,7 +137,7 @@ if ($id === null) {
             echo "</thead>";
             echo "<tbody>";
 
-
+            // build table rows
             while ($stmt->fetch()) {
                 echo "<tr>";
                 echo '<td>' . $VIN . '</td>';
@@ -150,11 +156,13 @@ if ($id === null) {
                 echo "</tr>";
             }
 
+            // table end
             echo "</tbody>";
             echo "</table>";
             echo "</div>";
 
         ?>
+            <!-- text input and button -->
             <div id="text-input">
                 <form name="form" action="" method="post">
                     <table>

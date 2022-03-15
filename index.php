@@ -1,4 +1,9 @@
 <?php
+/**
+ * Team 2
+ * 
+ * Aylin Onalan, Nicola Mihai, Kyle Kawahara, David Galenko
+ */
 ?>
 <html lang="en">
 <head>

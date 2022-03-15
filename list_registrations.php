@@ -1,6 +1,11 @@
 <?php
-require_once 'config.inc.php';
+/**
+ * Team 2
+ * 
+ * Aylin Onalan, Nicola Mihai, Kyle Kawahara, David Galenko
+ */
 
+require_once 'config.inc.php';
 ?>
 <html>
 
@@ -18,7 +23,6 @@ require_once 'config.inc.php';
 </head>
 
 <body>
-
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <a class="navbar-brand" href="index.php">Team2 | Vehicle Registration Database</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -61,7 +65,8 @@ require_once 'config.inc.php';
 
             // Loop Through Result
             $stmt->bind_result($year, $make, $model, $VIN);
-            // echo "<ul>";
+
+            // build table head
             echo "<div id=\"vehicle-table\">";
             echo "<table class=\"table table-striped table-bordered table-hover\">";
             echo "<thead class=theat-dark id=\"thead-dark\">";
@@ -74,7 +79,7 @@ require_once 'config.inc.php';
             echo "</thead>";
             echo "<tbody>";
 
-
+            // build table rows
             while ($stmt->fetch()) {
                 echo "<tr>";
                 echo '<td>' . $year . '</td>';
@@ -83,9 +88,12 @@ require_once 'config.inc.php';
                 echo '<td><a href="show_vehicle.php?id='  . $VIN . '">' . $VIN . '</td>';
                 echo "</tr>";
             }
+
+            // table end
             echo "</tbody>";
             echo "</table>";
 
+            // filter registration button
             echo "<div id=\"button-helper\">";
             echo "<form action=\"filter_registrations.php?id=\"> <button type=\"submit\" class=\"btn btn-primary\">Filter by VIN</button> </form>";
             echo "</div>";

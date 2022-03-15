@@ -91,6 +91,7 @@ require_once 'config.inc.php';
       $stmt->execute();
       $stmt->bind_result($VIN, $year, $make, $model, $color, $weightLbs, $vehicleType, $fuelType, $registrationNumber, $taxValue, $name, $certificationID, $iDDOL);
       echo "<br><br>";
+            // table head
             echo "<div id=\"vehicle-info-table\">";
             echo "<table class=\"table table-striped table-bordered table-hover\">";
             echo "<thead class=theat-dark id=\"thead-dark\">";
@@ -112,7 +113,7 @@ require_once 'config.inc.php';
             echo "</thead>";
             echo "<tbody>";
 
-
+            // fill table
             while ($stmt->fetch()) {
                 echo "<tr>";
                 echo '<td>' . $VIN . '</td>';
@@ -131,10 +132,13 @@ require_once 'config.inc.php';
                 echo "</tr>";
             }
 
+            // table end
             echo "</tbody>";
             echo "</table>";
             echo "</div>";
     ?>
+
+      <!-- text input and button -->
       <div id="text-input">
         <form name="form" action="" method="post">
           <table>

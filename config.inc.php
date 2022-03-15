@@ -1,8 +1,8 @@
 <?php
 /**
- * User: nmihai
- * Date: 3/10/2022
- * Time: 11:30 AM
+ * Team 2
+ * 
+ * Aylin Onalan, Nicola Mihai, Kyle Kawahara, David Galenko
  */
 $servername = 'vergil.u.washington.edu'; // Your Server (if noot)
 $username = 'team2';
