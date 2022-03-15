@@ -6,10 +6,10 @@
 </head>
 <body>
 <?php
-require_once 'header.inc.php';
+
 ?>
 <div>
-    <h2>Update Customer</h2>
+    <h2>Filter bt VIN</h2>
     <?php
 
     // Create connection
