@@ -59,17 +59,17 @@ require_once 'config.inc.php';
 
     // Check the Request is an Update from User -- Submitted via Form
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-      $VIN = $_POST['VIN'];
+      $VIN_num = $_POST['VIN-num'];
       //echo $_POST['subject']; 
-      if ($VIN === null)
+      if ($VIN_num === null)
         echo "<div><i>Specify a new name</i></div>";
-      else if ($VIN === false)
+      else if ($VIN_num === false)
         echo "<div><i>Specify a new name</i></div>";
-      else if (trim($VIN) === "")
-        echo "<div><i>Specify a new name</i></div>";
+      // else if (trim($VIN_num) === "")
+      //   echo "<div><i>Specify a new name</i></div>";
       else {
 
-      $VIN_num = $_GET['VIN-num'];
+      $VIN_num = $_POST['VIN-num'];
 
         /* perform search using safe parameterized sql */
         $sql = "SELECT year,make,model,VIN FROM Vehicle WHERE VIN LIKE '%VIN-num%'";
@@ -158,7 +158,7 @@ require_once 'config.inc.php';
     <!-- Enter VIN: <input type="text" name="VIN">
     <button type="submit">Filter</button>
     </form> -->
-    <form name="form" action="" method="get">
+    <form name="form" action="" method="post">
                     <input type="text" name="VIN-num" id="VIN-num" value="">
                     <button type="submit">Filter</button>
                 </form>
