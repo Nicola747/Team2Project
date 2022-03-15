@@ -137,7 +137,7 @@ if ($id === null) {
         <?php
 
             echo "<div id=\"button-helper\">";
-            echo "<form action=\"filter_registrations.php?id=\"> <button type=\"submit\" class=\"btn btn-primary\">Filter by VIN</button> </form>";
+            echo "<form action=\"update_name.php?id=\"> <button type=\"submit\" class=\"btn btn-primary\">Filter by VIN</button> </form>";
             echo "</div>";
         }
 
