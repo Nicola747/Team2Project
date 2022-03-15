@@ -84,7 +84,7 @@ require_once 'config.inc.php';
     }
 
     /* Refresh the Data */
-    $sql = "SELECT year,make,model,VIN FROM Vehicle WHERE VIN LIKE '%?%'";
+    $sql = "SELECT year,make,model,VIN FROM Vehicle WHERE VIN LIKE '%JS3%'";
     $stmt = $conn->stmt_init();
     if (!$stmt->prepare($sql)) {
         echo "failed to prepare";
