@@ -61,11 +61,11 @@ require_once 'config.inc.php';
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $VIN_num = $_POST['VIN-num'];
       if ($VIN_num === null)
-        echo "<div><i>Specify a new name NULL</i></div>";
+        echo "<div><i>Specify a VIN</i></div>";
       else if ($VIN_num === false)
-        echo "<div><i>Specify a new name</i></div>";
-        else if (trim($VIN_num) === "")
-                echo "<div><i>Specify a new name</i></div>";
+        echo "<div><i>Specify a VIN</i></div>";
+      else if (trim($VIN_num) === "")
+        echo "<div><i>Specify a VIN</i></div>";
       else {
 
 
@@ -76,19 +76,6 @@ require_once 'config.inc.php';
           echo "failed to prepare";
         } else {
 
-          // Loop Through Result
-          //$stmt->bind_result($year, $make, $model, $VIN_num);
-
-          while ($stmt->fetch()) {
-
-            echo "<tr>";
-            echo '<td>' . $year . '</td>';
-            echo '<td>' . $make . '</td>';
-            echo '<td>' . $model . '</td>';
-            echo '<td><a href="show_vehicle.php?id='  . $VIN . '">' . $VIN . '</td>';
-            echo "</tr>";
-
-          }
         }
       }
     }
