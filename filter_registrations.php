@@ -118,20 +118,29 @@ require_once 'config.inc.php';
     }
     ?>
 
+
     <div id="text-input">
       <form name="form" action="" method="post">
-        <input class="form-control mr-sm-2" placeholder="Enter VIN" type="text" name="VIN-num" id="VIN-num" value="">
-        <button type="submit" class="btn btn-primary">Filter</button>
+        <table>
+          <tr>
+            <td>
+              <input class="form-control mr-sm-2" placeholder="Enter VIN" type="text" name="VIN-num" id="VIN-num" value="">
+            </td>
+            <td>
+              <button type="submit" class="btn btn-primary">Filter</button>
+            </td>
+          </tr>
+        </table>
       </form>
     </div>
   </div>
-    <?php
+  <?php
 
 
-    $conn->close();
+  $conn->close();
 
-    ?>
-    </>
+  ?>
+  </>
 </body>
 
 </html>
