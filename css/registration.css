@@ -29,13 +29,12 @@ button {
 
 /* Styling modal */
 
-
-/* .modal:before {
+.modal:before {
     content: '';
     display: inline-block;
     height: 100%;
     vertical-align: middle;
-} */
+}
 
 .modal-dialog {
     display: inline-block;
