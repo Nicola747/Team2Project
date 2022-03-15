@@ -22,25 +22,25 @@ require_once 'header.inc.php';
 
 	// Check the Request is an Update from User -- Submitted via Form
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $CustomerName = $_POST['CustomerName'];
+        $VIN = $_POST['VIN'];
 	//echo $_POST['subject']; 
-        if ($CustomerName === null)
+        if ($VIN === null)
             echo "<div><i>Specify a new name</i></div>";
-        else if ($CustomerName === false)
+        else if ($VIN === false)
             echo "<div><i>Specify a new name</i></div>";
-        else if (trim($CustomerName) === "")
+        else if (trim($VIN) === "")
             echo "<div><i>Specify a new name</i></div>";
         else {
 			
             /* perform update using safe parameterized sql */
-            $sql = "UPDATE customer SET CustomerName = ? WHERE CustomerNumber = ?";
+            $sql = "SELECT * FROM Vehicle WHERE VIN LIKE '%?%'";
             $stmt = $conn->stmt_init();
             if (!$stmt->prepare($sql)) {
                 echo "failed to prepare";
             } else {
 				
 				// Bind user input to statement
-                $stmt->bind_param('ss', $CustomerName,$id);
+                $stmt->bind_param('ss', $VIN,$id);
 				
 				// Execute statement and commit transaction
                 $stmt->execute();
@@ -50,30 +50,62 @@ require_once 'header.inc.php';
     }
 
     /* Refresh the Data */
-    $sql = "SELECT CustomerNumber,CustomerName,StreetAddress,CityName,StateCode,PostalCode FROM customer C " .
-        "INNER JOIN address A ON C.DefaultAddressID = A.AddressID WHERE CustomerNumber = ?";
+    $sql = "SELECT * FROM Vehicle WHERE VIN LIKE '%?%'";
     $stmt = $conn->stmt_init();
     if (!$stmt->prepare($sql)) {
         echo "failed to prepare";
     }
     else {
-        $stmt->bind_param('s',$id);
+		
+		// Execute the Statement
         $stmt->execute();
-        $stmt->bind_result($CustomerNumber,$CustomerName,$StreetName,$CityName,$StateCode,$PostalCode);
-        ?>
-        <form method="post">
-            <input type="hidden" name="id" value="<?= $id ?>">
-        <?php
+		
+		// Loop Through Result
+        $stmt->bind_result($year,$make,$model,$VIN);
+        // echo "<ul>";
+        echo "<div id=\"vehicle-table\">";
+        echo "<table class=\"table table-striped table-bordered table-hover\">";
+        echo "<thead class=theat-dark id=\"thead-dark\">";
+        echo "<tr>";
+        echo "<th scope=\"col\">Year</th>";
+        echo "<th scope=\"col\">Make</th>";
+        echo "<th scope=\"col\">Model</th>";
+        echo "<th scope=\"col\">VIN Number</th>";
+        echo "</tr>";
+        echo "</thead>";
+        echo "<tbody>";
+        
+          
         while ($stmt->fetch()) {
-            echo '<a href="show_customer.php?id='  . $CustomerNumber . '">' . $CustomerName . '</a><br>' .
-             $StreetName . ',' . $StateCode . '  ' . $PostalCode;
+            // echo '<li><a href="show_vehicle.php?id='  . $year . '">' . $make . '">'. $model . '</a></li>';
+            // echo "<th scope=\"row\">1</th>";
+            echo "<tr>";
+            echo '<td>' .$year. '</td>';
+            echo '<td>' .$make. '</td>';
+            echo '<td>' .$model. '</td>';
+            echo '<td><a href="show_vehicle.php?id='  . $VIN . '">' .$VIN. '</td>';
+            echo "</tr>";
+            // echo '<td><a href="show_vehicle.php?id='  . $year . '">' . $make . '">'. $model . '</a></td>';
+            // echo '';
         }
+        // echo "</ul>";
+        echo "</tbody>";
+        echo "</table>";
+
+        echo "<div id=\"text-input\">";
+        // echo '<a href="show_vehicle.php?id='  . $VIN . '">Filter by VIN</a>';
+        echo '<a href="filter_registrations.php?id=" class=\"btn btn-primary\">Filter by VIN</a>';
+        echo "</div>";
+        echo "</div>";
+
+        
+    }
     ?><br><br>
-            New Name: <input type="text" name="CustomerName">
+            New Name: <input type="text" name="VIN">
             <button type="submit">Update</button>
         </form>
     <?php
-    }
+    
 
     $conn->close();
 
