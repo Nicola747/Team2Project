@@ -8,19 +8,19 @@
  */
 require_once 'config.inc.php';
 // Get Customer Number
-// $id = $_GET['id'];
-// if ($id === "") {
-//     header('location: list_customers.php');
-//     exit();
-// }
-// if ($id === false) {
-//     header('location: list_customers.php');
-//     exit();
-// }
-// if ($id === null) {
-//     header('location: list_customers.php');
-//     exit();
-// }
+$id = $_GET['id'];
+if ($id === "") {
+    header('location: list_customers.php');
+    exit();
+}
+if ($id === false) {
+    header('location: list_customers.php');
+    exit();
+}
+if ($id === null) {
+    header('location: list_customers.php');
+    exit();
+}
 ?>
 <html lang="en">
 
