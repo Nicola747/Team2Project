@@ -48,21 +48,21 @@ if ($id === null) {
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item ">
-                    <a class="nav-link" href="list_registrations.php">List All Registrations <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item ">
+                <!-- <li class="nav-item ">
+                    <a class="nav-link" href="list_registrations.php">List All Vehicles<span class="sr-only">(current)</span></a>
+                </li> -->
+                <!-- <li class="nav-item ">
                     <a class="nav-link" href="list_vehicles.php">List All Vehicles</a>
-                </li>
+                </li> -->
                 <!-- http://example.com -->
-                <li class="nav-item dropdown">  
+                <!-- <li class="nav-item dropdown">  
                     <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Make Changes to Database</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown01">
                         <a class="dropdown-item" href="create_registration.php">Create New Registration</a>
                         <a class="dropdown-item" href="remove_registration.php">Remove Registration</a>
                         <a class="dropdown-item" href="modify_registration.php">Modify Registration</a>
                     </div>
-                </li>
+                </li> -->
             </ul>
             <a class="navbar-brand" id="group-names" href="">Aylin Onalan, Nicola Mihai, Kyle Kawahara, David Galenko</a>
 
@@ -121,10 +121,7 @@ if ($id === null) {
             echo "</tr>";
             echo "</thead>";
             echo "<tbody>";
-            // while ($stmt->fetch()) {
-            //     echo '<a href="show_customer.php?id='  . $year . '">' . $make . '</a>' .
-            //      $model . ',' . $VIN . '  ' . $ownerIdNumber;
-            // }
+
 
             while ($stmt->fetch()) {
                 echo "<tr>";

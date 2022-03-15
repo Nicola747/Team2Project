@@ -29,11 +29,11 @@ require_once 'config.inc.php';
             <li class="nav-item ">
               <a class="nav-link" href="index.php">Home<span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item ">
+            <!-- <li class="nav-item ">
               <a class="nav-link" href="list_vehicles.php">List All Vehicles</a>
-            </li>
+            </li> -->
 
-            <li class="nav-item dropdown">
+            <!-- <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Make Changes to Database</a>
                     <div class="dropdown-menu" aria-labelledby="dropdown01">
                         <!-- <a class="dropdown-item" href="https://students.washington.edu/nmihai/bimd233/CapstoneProject/WriteUp/">Capstone Draft</a>
@@ -44,7 +44,7 @@ require_once 'config.inc.php';
                         <!-- <hr>
                         <a class="dropdown-item" href="https://marine-tractor-294001.wn.r.appspot.com/">Lavender</a> -->
                     </div>
-                </li>
+                </li> -->
           </ul>
           <a class="navbar-brand" id="group-names" href="">Aylin Onalan, Nicola Mihai, Kyle Kawahara, David Galenko</a>
           
