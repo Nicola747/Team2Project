@@ -73,7 +73,7 @@ require_once 'config.inc.php';
             } else {
 				
 				// Bind user input to statement
-                $stmt->bind_param($year,$make,$model,$VIN);
+                $stmt->bind_param('ss',$VIN);
 				
 				// Execute statement and commit transaction
                 $stmt->execute();
@@ -125,10 +125,10 @@ require_once 'config.inc.php';
         echo "</tbody>";
         echo "</table>";
 
-        echo "<div id=\"text-input\">";
+        // echo "<div id=\"text-input\">";
         // echo '<a href="show_vehicle.php?id='  . $VIN . '">Filter by VIN</a>';
-        echo '<a href="filter_registrations.php?id=" class=\"btn btn-primary\">Filter by VIN</a>';
-        echo "</div>";
+        // echo '<a href="filter_registrations.php?id=" class=\"btn btn-primary\">Filter by VIN</a>';
+        // echo "</div>";
         echo "</div>";
 
         
