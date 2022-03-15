@@ -135,12 +135,14 @@ if ($id === null) {
             echo "</tbody>";
             echo "</table>";
             echo "</div>";
-        ?>
-        <?php
 
             echo "<div id=\"button-helper\">";
             echo "<form action=\"update_name.php?id=" . $VIN ."\"> <button type=\"submit\" class=\"btn btn-primary\">Update Name</button> </form>";
             echo "</div>";
+        ?>
+        <?php
+
+            
         }
 
         $conn->close();
