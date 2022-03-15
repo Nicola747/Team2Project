@@ -60,6 +60,7 @@ require_once 'config.inc.php';
     // Check the Request is an Update from User -- Submitted via Form
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $VIN_num = $_POST['VIN-num'];
+      $_SESSION['myVIN']=$VIN_num;
       if ($VIN_num === null)
         echo "<div><i>Specify a VIN</i></div>";
       else if ($VIN_num === false)
@@ -116,6 +117,8 @@ require_once 'config.inc.php';
       echo "</tbody>";
       echo "</table>";
     }
+
+    
     ?>
 
 
