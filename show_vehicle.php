@@ -48,7 +48,7 @@ if ($id === null) {
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
-            <li class="nav-item ">
+                <li class="nav-item ">
                     <a class="nav-link" href="index.php">Home<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item ">
@@ -87,7 +87,7 @@ if ($id === null) {
         // $sql = "SELECT year,make,model,VIN FROM Vehicle V " .
         //     "INNER JOIN Registration R ON V.make = R.make WHERE VIN = ?";
 
-        $sql = "SELECT V.*,registrationNumber,taxValue,sellerIdNumber,ownerIdNumber,certificationID,iDDOL FROM Vehicle V INNER JOIN Registration R ON V.VIN = R.VIN WHERE R.VIN = ?";
+        $sql = "SELECT V.*,registrationNumber,taxValue,name,certificationID,iDDOL FROM Vehicle V INNER JOIN Registration R ON V.VIN = R.VIN INNER JOIN Owner O ON R.ownerIdNumber = O.idNumber INNER JOIN DriverLicenseID DL ON O.idNumber = DL.idNumber WHERE R.VIN = ?";
         $stmt = $conn->stmt_init();
         if (!$stmt->prepare($sql)) {
             echo "failed to prepare";
@@ -101,7 +101,7 @@ if ($id === null) {
 
             // Process Results Using Cursor
             // $stmt->bind_result($year,$make,$model,$VIN,$ownerIdNumber,$weightLbs,$color,$vehicleType,$fuelType,$registrationNumber,$taxValue,$sellerIdNumber,$ownerIdNumber,$certificationID,$iDDOL);
-            $stmt->bind_result($VIN, $year, $make, $model, $color, $weightLbs, $vehicleType, $fuelType, $registrationNumber, $taxValue, $sellerIdNumber, $ownerIdNumber, $certificationID, $iDDOL);
+            $stmt->bind_result($VIN, $year, $make, $model, $color, $weightLbs, $vehicleType, $fuelType, $registrationNumber, $taxValue, $name, $certificationID, $iDDOL);
             echo "<br><br>";
             echo "<div id=\"vehicle-info-table\">";
             echo "<table class=\"table table-striped table-bordered table-hover\">";
@@ -117,8 +117,7 @@ if ($id === null) {
             echo "<th scope=\"col\">Fuel Type</th>";
             echo "<th scope=\"col\">Registration Number</th>";
             echo "<th scope=\"col\">Tax Value</th>";
-            echo "<th scope=\"col\">Seller ID</th>";
-            echo "<th scope=\"col\">Owner ID</th>";
+            echo "<th scope=\"col\">Name</th>";
             echo "<th scope=\"col\">Certification ID</th>";
             echo "<th scope=\"col\">DOL ID</th>";
             echo "</tr>";
@@ -138,8 +137,7 @@ if ($id === null) {
                 echo '<td>' . $fuelType . '</td>';
                 echo '<td>' . $registrationNumber . '</td>';
                 echo '<td>' . $taxValue . '</td>';
-                echo '<td>' . $sellerIdNumber . '</td>';
-                echo '<td>' . $ownerIdNumber . '</td>';
+                echo '<td>' . $name . '</td>';
                 echo '<td>' . $certificationID . '</td>';
                 echo '<td>' . $iDDOL . '</td>';
                 echo "</tr>";
@@ -172,10 +170,10 @@ if ($id === null) {
                                 </button>
                             </div>
                             <div class="modal-body">
-                            <div>
-                            
-                            </div>
-                                
+                                <div>
+
+                                </div>
+
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
