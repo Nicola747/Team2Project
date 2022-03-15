@@ -9,9 +9,35 @@ require_once 'config.inc.php';
 <html>
 <head>
     <title>Sample PHP Database Program</title>
-    <link rel="stylesheet" href="base.css">
+    <meta name="description" content="Vehicle Registration Database">
+    <meta name="author" content="Nicola Mihai">
+    <link rel="icon" href="media/images/team2icon_v4.png">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/index.css?v=1.0">
+    <link rel="stylesheet" href="css/registration.css?v=1.0">
+    <link rel="stylesheet" href="css/divStyle.css?v=1.0">
 </head>
 <body>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <a class="navbar-brand" href="index.php">Team2 | Vehicle Registration Database</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item ">
+              <a class="nav-link" href="index.php">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link" href="list_registrations.php">List All Vehicles</a>
+            </li>
+          </ul>
+          <a class="navbar-brand" id="group-names" href="">Aylin Onalan, Nicola Mihai, Kyle Kawahara, David Galenko</a>
+          
+        </div>
+      </nav>
+
 <?php
 
 ?>
@@ -27,10 +53,10 @@ require_once 'config.inc.php';
         die("Connection failed: " . $conn->connect_error);
     }
 
-	// Check the Request is an Update from User -- Submitted via Form
+	  // Check the Request is an Update from User -- Submitted via Form
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $VIN = $_POST['VIN'];
-	//echo $_POST['subject']; 
+	      //echo $_POST['subject']; 
         if ($VIN === null)
             echo "<div><i>Specify a new name</i></div>";
         else if ($VIN === false)
@@ -108,8 +134,8 @@ require_once 'config.inc.php';
         
     }
     ?><br><br>
-            New Name: <input type="text" name="VIN">
-            <button type="submit">Update</button>
+            Enter VIN: <input type="text" name="VIN">
+            <button type="submit">Filter</button>
         </form>
     <?php
     
