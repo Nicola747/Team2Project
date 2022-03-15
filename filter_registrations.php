@@ -117,7 +117,7 @@ require_once 'config.inc.php';
       $stmt->execute();
 
       // Loop Through Result
-      $stmt->bind_result($year, $make, $model, $VIN);
+      $stmt->bind_result($year, $make, $model, $VIN_num);
       // echo "<ul>";
       echo "<div id=\"vehicle-table\">";
       echo "<table class=\"table table-striped table-bordered table-hover\">";
