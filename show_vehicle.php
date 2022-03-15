@@ -74,8 +74,6 @@ if ($id === null) {
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $cname = $_POST['uname'];
         //echo $_POST['subject']; 
-        session_start();
-        echo $_SESSION['myVIN'];
         if ($cname === null)
           echo "<div><i>Specify a new name</i></div>";
         else if ($cname === false)
