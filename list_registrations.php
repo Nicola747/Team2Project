@@ -103,7 +103,8 @@ require_once 'config.inc.php';
 
         echo "<div id=\"text-input\">";
         // echo '<a href="filter_registrations.php?id=" class=\"btn btn-primary\">Filter by VIN</a>';
-        echo "<button href=\"filter_registrations.php?id=\" type=\"button\" class=\"btn btn-primary\" > Filter by VIN </button>";
+        echo "<form action=\"filter_registrations.php?id=\"> <button type=\"submit\">Filter by VIN</button> </form>";
+        // echo "<button href=\"filter_registrations.php?id=\" type=\"button\" class=\"btn btn-primary\" > Filter by VIN </button>";
         echo "</div>";
         echo "</div>";
 
