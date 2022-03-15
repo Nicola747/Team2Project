@@ -1,14 +1,5 @@
 <?php
-
-/**
- * Created by PhpStorm.
- * User: MKochanski
- * Date: 7/24/2018
- * Time: 3:07 PM
- */
 require_once 'config.inc.php';
-// Get Customer Number
-
 ?>
 <html>
 

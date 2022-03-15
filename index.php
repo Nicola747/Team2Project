@@ -1,10 +1,5 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: markk@uw.edu
- * Date: 7/24/2018
- * Time: 2:45 PM
-*/?>
+?>
 <html lang="en">
 <head>
   <meta charset="utf-8">

@@ -1,8 +1,4 @@
 <?php
-
-/**
- * User: nmihai
- */
 require_once 'config.inc.php';
 
 ?>
@@ -61,7 +57,7 @@ require_once 'config.inc.php';
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $VIN_num = $_POST['VIN-num'];
       session_start();
-      $_SESSION['myVIN']=$VIN_num;
+      $_SESSION['myVIN'] = $VIN_num;
       if ($VIN_num === null)
         echo "<div><i>Specify a VIN</i></div>";
       else if ($VIN_num === false)
@@ -119,7 +115,7 @@ require_once 'config.inc.php';
       echo "</table>";
     }
 
-    
+
     ?>
 
 

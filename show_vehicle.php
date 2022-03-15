@@ -1,11 +1,5 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: MKochanski
- * Date: 7/24/2018
- * Time: 3:07 PM
- */
 require_once 'config.inc.php';
 // Get Customer Number
 $id = $_GET['id'];
@@ -100,10 +94,6 @@ if ($id === null) {
         }
       }
 
-        // Prepare SQL using Parameterized Form (Safe from SQL Injections)
-        // $sql = "SELECT year,make,model,VIN FROM Vehicle V " .
-        //     "INNER JOIN Registration R ON V.make = R.make WHERE VIN = ?";
-
         $sql = "SELECT V.*,registrationNumber,taxValue,name,certificationID,iDDOL FROM Vehicle V 
         INNER JOIN Registration R ON V.VIN = R.VIN INNER JOIN Owner O ON R.ownerIdNumber = O.idNumber 
         INNER JOIN DriverLicenseID DL ON O.idNumber = DL.idNumber WHERE R.VIN = ?";
@@ -118,8 +108,6 @@ if ($id === null) {
             // Execute the Statement
             $stmt->execute();
 
-            // Process Results Using Cursor
-            // $stmt->bind_result($year,$make,$model,$VIN,$ownerIdNumber,$weightLbs,$color,$vehicleType,$fuelType,$registrationNumber,$taxValue,$sellerIdNumber,$ownerIdNumber,$certificationID,$iDDOL);
             $stmt->bind_result($VIN, $year, $make, $model, $color, $weightLbs, $vehicleType, $fuelType, $registrationNumber, $taxValue, $name, $certificationID, $iDDOL);
             echo "<br><br>";
             echo "<div id=\"vehicle-info-table\">";
@@ -165,10 +153,6 @@ if ($id === null) {
             echo "</tbody>";
             echo "</table>";
             echo "</div>";
-
-            // echo "<div id=\"button-helper\">";
-            // echo "<form action=\"update_name.php?id=" . $VIN ."\"> <button type=\"submit\" class=\"btn btn-primary\">Update Name</button> </form>";
-            // echo "</div>";
 
         ?>
             <div id="text-input">
