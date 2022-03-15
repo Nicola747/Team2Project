@@ -87,10 +87,9 @@ require_once 'config.inc.php';
       }
     }
 
-    $VIN_num = "5TDGZRBHXNS565694";
     /* Refresh the Data */
     $sql = "SELECT V.*,registrationNumber,taxValue,name,certificationID,iDDOL FROM Vehicle V INNER JOIN Registration R ON V.VIN = R.VIN 
-    INNER JOIN Owner O ON R.ownerIdNumber = O.idNumber INNER JOIN DriverLicenseID DL ON O.idNumber = DL.idNumber";
+    INNER JOIN Owner O ON R.ownerIdNumber = O.idNumber INNER JOIN DriverLicenseID DL ON O.idNumber = DL.idNumber WHERE R.VIN = ?";
     $stmt = $conn->stmt_init();
     if (!$stmt->prepare($sql)) {
       echo "failed to prepare";
