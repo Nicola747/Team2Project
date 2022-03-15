@@ -158,6 +158,7 @@ require_once 'config.inc.php';
     </form> -->
     <form name="form" action="" method="get">
                     <input type="text" name="VIN-num" id="VIN-num" value="VIN">
+                    <button type="submit">Filter</button>
                 </form>
     <?php
 
