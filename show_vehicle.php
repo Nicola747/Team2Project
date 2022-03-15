@@ -33,7 +33,6 @@ if ($id === null) {
     <link rel="icon" href="media/images/team2icon_v4.png">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="css/index.css?v=1.0">
     <link rel="stylesheet" href="css/registration.css?v=1.0">
     <link rel="stylesheet" href="css/divStyle.css?v=1.0">
@@ -54,18 +53,6 @@ if ($id === null) {
                 <li class="nav-item ">
                     <a class="nav-link" href="list_registrations.php">List All Vehicles<span class="sr-only">(current)</span></a>
                 </li>
-                <!-- <li class="nav-item ">
-                    <a class="nav-link" href="list_vehicles.php">List All Vehicles</a>
-                </li> -->
-                <!-- http://example.com -->
-                <!-- <li class="nav-item dropdown">  
-                    <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Make Changes to Database</a>
-                    <div class="dropdown-menu" aria-labelledby="dropdown01">
-                        <a class="dropdown-item" href="create_registration.php">Create New Registration</a>
-                        <a class="dropdown-item" href="remove_registration.php">Remove Registration</a>
-                        <a class="dropdown-item" href="modify_registration.php">Modify Registration</a>
-                    </div>
-                </li> -->
             </ul>
             <a class="navbar-brand" id="group-names" href="">Aylin Onalan, Nicola Mihai, Kyle Kawahara, David Galenko</a>
 
@@ -147,44 +134,11 @@ if ($id === null) {
             echo "</table>";
             echo "</div>";
         ?>
-
-
-
-            <!-- Button trigger modal -->
-            <div id="button-helper">
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    View Owner Information
-                </button>
-            </div>
-
-
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="vertical-alignment-helper">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Owner Information</h5>
-                                <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                                    <span aria-hidden="true">&times;</span>
-                                </button>
-                            </div>
-                            <div class="modal-body">
-                                <div>
-
-                                </div>
-
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
-                                <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
-                                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         <?php
+
+            echo "<div id=\"button-helper\">";
+            echo "<form action=\"filter_registrations.php?id=\"> <button type=\"submit\" class=\"btn btn-primary\">Filter by VIN</button> </form>";
+            echo "</div>";
         }
 
         $conn->close();
