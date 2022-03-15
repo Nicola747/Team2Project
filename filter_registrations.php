@@ -69,8 +69,10 @@ require_once 'config.inc.php';
         echo "<div><i>Specify a new name</i></div>";
       else {
 
+      $VIN_num = $_GET['VIN-num'];
+
         /* perform search using safe parameterized sql */
-        $sql = "SELECT year,make,model,VIN FROM Vehicle WHERE VIN LIKE '%$VIN%'";
+        $sql = "SELECT year,make,model,VIN FROM Vehicle WHERE VIN LIKE '%VIN_num%'";
         $stmt = $conn->stmt_init();
         if (!$stmt->prepare($sql)) {
           echo "failed to prepare";
@@ -151,9 +153,12 @@ require_once 'config.inc.php';
       echo "</div>";
     }
     ?><br><br>
-    Enter VIN: <input type="text" name="VIN">
+    <!-- Enter VIN: <input type="text" name="VIN">
     <button type="submit">Filter</button>
-    </form>
+    </form> -->
+    <form name="form" action="" method="get">
+                    <input type="text" name="VIN-num" id="VIN-num" value="VIN">
+                </form>
     <?php
 
 
