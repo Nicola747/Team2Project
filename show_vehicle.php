@@ -83,8 +83,8 @@ if ($id === null) {
         else {
   
           /* perform update using safe parameterized sql */
-          $sql = "UPDATE DriverLicenseID SET name = ? WHERE idNumber = SELECT idNumber FROM Vehicle V 
-          INNER JOIN Registration R ON V.VIN = R.VIN INNER JOIN Owner O ON R.ownerIdNumber = O.idNumber WHERE R.VIN = ?";
+          $sql = "UPDATE DriverLicenseID SET name = ? WHERE idNumber = (SELECT idNumber FROM Vehicle V 
+          INNER JOIN Registration R ON V.VIN = R.VIN INNER JOIN Owner O ON R.ownerIdNumber = O.idNumber WHERE R.VIN = ?)";
           $stmt = $conn->stmt_init();
           if (!$stmt->prepare($sql)) {
             echo "failed to prepare";
