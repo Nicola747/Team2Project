@@ -115,14 +115,12 @@ require_once 'config.inc.php';
       }
       echo "</tbody>";
       echo "</table>";
-
-      // echo "</div>";
     }
     ?>
 
     <div id="text-input">
       <form name="form" action="" method="post">
-        <input type="text" name="VIN-num" id="VIN-num" value="">
+        <input class="form-control mr-sm-2" placeholder="Enter VIN" type="text" name="VIN-num" id="VIN-num" value="">
         <button type="submit" class="btn btn-primary">Filter</button>
       </form>
     </div>
