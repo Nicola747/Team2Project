@@ -72,27 +72,28 @@ if ($id === null) {
         
         // Check the Request is an Update from User -- Submitted via Form
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $CustomerName = $_POST['CustomerName'];
+        $cname = $_POST['uname'];
         //echo $_POST['subject']; 
         session_start();
         echo $_SESSION['myVIN'];
-        if ($CustomerName === null)
+        if ($cname === null)
           echo "<div><i>Specify a new name</i></div>";
-        else if ($CustomerName === false)
+        else if ($cname === false)
           echo "<div><i>Specify a new name</i></div>";
-        else if (trim($CustomerName) === "")
+        else if (trim($cname) === "")
           echo "<div><i>Specify a new name</i></div>";
         else {
   
           /* perform update using safe parameterized sql */
-          $sql = "UPDATE customer SET CustomerName = ? WHERE CustomerNumber = ?";
+          $sql = "UPDATE DriverLicenseID SET name = ? WHERE idNumber = SELECT idNumber FROM Vehicle V 
+          INNER JOIN Registration R ON V.VIN = R.VIN INNER JOIN Owner O ON R.ownerIdNumber = O.idNumber WHERE R.VIN = ?";
           $stmt = $conn->stmt_init();
           if (!$stmt->prepare($sql)) {
             echo "failed to prepare";
           } else {
   
             // Bind user input to statement
-            $stmt->bind_param('ss', $CustomerName, $id);
+            $stmt->bind_param('ss', $cname, $id);
   
             // Execute statement and commit transaction
             $stmt->execute();
@@ -100,7 +101,7 @@ if ($id === null) {
           }
         }
       }
-      
+
         // Prepare SQL using Parameterized Form (Safe from SQL Injections)
         // $sql = "SELECT year,make,model,VIN FROM Vehicle V " .
         //     "INNER JOIN Registration R ON V.make = R.make WHERE VIN = ?";
@@ -177,7 +178,7 @@ if ($id === null) {
                     <table>
                         <tr>
                             <td>
-                                <input class="form-control mr-sm-2" placeholder="Enter Name" type="text" name="VIN-num" id="VIN-num" value="">
+                                <input class="form-control mr-sm-2" placeholder="Enter Name" type="text" name="uname" id="uname" value="">
                             </td>
                             <td>
                                 <button type="submit" class="btn btn-primary">Update</button>
