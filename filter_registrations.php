@@ -60,17 +60,14 @@ require_once 'config.inc.php';
     // Check the Request is an Update from User -- Submitted via Form
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       $VIN_num = $_POST['VIN-num'];
-      //echo $_POST['subject']; 
       if ($VIN_num === null)
         echo "<div><i>Specify a new name NULL</i></div>";
       else if ($VIN_num === false)
         echo "<div><i>Specify a new name</i></div>";
-      // else if (trim($VIN_num) === "")
-      //   echo "<div><i>Specify a new name</i></div>";
+        else if (trim($VIN_num) === "")
+                echo "<div><i>Specify a new name</i></div>";
       else {
 
-      // $VIN_num = $_GET['VIN-num'];
-      //$VIN_num = ;
 
         /* perform search using safe parameterized sql */
         $sql = "SELECT year,make,model,VIN FROM Vehicle WHERE VIN LIKE '%$VIN_num%'";
@@ -79,28 +76,19 @@ require_once 'config.inc.php';
           echo "failed to prepare";
         } else {
 
-          // Bind user input to statement
-          // $stmt->bind_param('ss',$VIN);
-
           // Loop Through Result
-          $stmt->bind_result($year, $make, $model, $VIN_num);
+          //$stmt->bind_result($year, $make, $model, $VIN_num);
 
           while ($stmt->fetch()) {
-            // echo '<li><a href="show_vehicle.php?id='  . $year . '">' . $make . '">'. $model . '</a></li>';
-            // echo "<th scope=\"row\">1</th>";
+
             echo "<tr>";
             echo '<td>' . $year . '</td>';
             echo '<td>' . $make . '</td>';
             echo '<td>' . $model . '</td>';
             echo '<td><a href="show_vehicle.php?id='  . $VIN . '">' . $VIN . '</td>';
             echo "</tr>";
-            // echo '<td><a href="show_vehicle.php?id='  . $year . '">' . $make . '">'. $model . '</a></td>';
-            // echo '';
-          }
 
-          // Execute statement and commit transaction
-          //$stmt->execute();
-          //$conn->commit();
+          }
         }
       }
     }
@@ -132,31 +120,20 @@ require_once 'config.inc.php';
 
 
       while ($stmt->fetch()) {
-        // echo '<li><a href="show_vehicle.php?id='  . $year . '">' . $make . '">'. $model . '</a></li>';
-        // echo "<th scope=\"row\">1</th>";
         echo "<tr>";
         echo '<td>' . $year . '</td>';
         echo '<td>' . $make . '</td>';
         echo '<td>' . $model . '</td>';
         echo '<td><a href="show_vehicle.php?id='  . $VIN . '">' . $VIN . '</td>';
         echo "</tr>";
-        // echo '<td><a href="show_vehicle.php?id='  . $year . '">' . $make . '">'. $model . '</a></td>';
-        // echo '';
       }
-      // echo "</ul>";
       echo "</tbody>";
       echo "</table>";
 
-      // echo "<div id=\"text-input\">";
-      // echo '<a href="show_vehicle.php?id='  . $VIN . '">Filter by VIN</a>';
-      // echo '<a href="filter_registrations.php?id=" class=\"btn btn-primary\">Filter by VIN</a>';
-      // echo "</div>";
       echo "</div>";
     }
     ?><br><br>
-    <!-- Enter VIN: <input type="text" name="VIN">
-    <button type="submit">Filter</button>
-    </form> -->
+
     <form name="form" action="" method="post">
                     <input type="text" name="VIN-num" id="VIN-num" value="">
                     <button type="submit">Filter</button>
