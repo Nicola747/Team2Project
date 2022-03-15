@@ -15,6 +15,7 @@ require_once 'config.inc.php';
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="css/index.css?v=1.0">
     <link rel="stylesheet" href="css/registration.css?v=1.0">
+    <link rel="stylesheet" href="css/divStyle.css?v=1.0">
 
 </head>
 <body>
@@ -101,10 +102,12 @@ require_once 'config.inc.php';
         echo "</table>";
         echo "</div>";
 
+        echo "<div id=\"text-input\">";
         echo "<form action=\"filter_registrations.php?id=\" method=\"post\">
-            <input class=\"form-control mr-sm-2\" type=\"password\" placeholder=\"Filter\" name=\"psw\">
+            <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Filter\" name=\"psw\">
             <button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Search</button>
         </form>";
+        echo "</div>";
     }
 
 	// Close Connection
