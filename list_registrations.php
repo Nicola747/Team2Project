@@ -102,7 +102,7 @@ require_once 'config.inc.php';
         echo "</table>";
 
         echo "<div id=\"text-input\">";
-        echo '<a href="show_vehicle.php?id='  . $VIN . '">';
+        echo '<a href="show_vehicle.php?id='  . $VIN . '">Filter by VIN</a>';
         echo "</div>";
 
         echo "</div>";
