@@ -88,15 +88,15 @@ require_once 'config.inc.php';
     }
 
     /* Refresh the Data */
-    $sql = "SELECT CustomerNumber,CustomerName,StreetAddress,CityName,StateCode,PostalCode FROM customer C " .
-      "INNER JOIN address A ON C.DefaultAddressID = A.AddressID WHERE CustomerNumber = ?";
+    $sql = "SELECT V.*,registrationNumber,taxValue,name,certificationID,iDDOL FROM Vehicle V INNER JOIN Registration R ON V.VIN = R.VIN 
+    INNER JOIN Owner O ON R.ownerIdNumber = O.idNumber INNER JOIN DriverLicenseID DL ON O.idNumber = DL.idNumber WHERE R.VIN = ?";
     $stmt = $conn->stmt_init();
     if (!$stmt->prepare($sql)) {
       echo "failed to prepare";
     } else {
-      $stmt->bind_param('s', $id);
+      // $stmt->bind_param('s', $id);
       $stmt->execute();
-      $stmt->bind_result($CustomerNumber, $CustomerName, $StreetName, $CityName, $StateCode, $PostalCode);
+      $stmt->bind_result($VIN, $year, $make, $model, $color, $weightLbs, $vehicleType, $fuelType, $registrationNumber, $taxValue, $name, $certificationID, $iDDOL);
     ?>
       <div id="text-input">
         <form name="form" action="" method="post">
