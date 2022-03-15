@@ -69,7 +69,38 @@ if ($id === null) {
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         }
-
+        
+        // Check the Request is an Update from User -- Submitted via Form
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $CustomerName = $_POST['CustomerName'];
+        //echo $_POST['subject']; 
+        session_start();
+        echo $_SESSION['myVIN'];
+        if ($CustomerName === null)
+          echo "<div><i>Specify a new name</i></div>";
+        else if ($CustomerName === false)
+          echo "<div><i>Specify a new name</i></div>";
+        else if (trim($CustomerName) === "")
+          echo "<div><i>Specify a new name</i></div>";
+        else {
+  
+          /* perform update using safe parameterized sql */
+          $sql = "UPDATE customer SET CustomerName = ? WHERE CustomerNumber = ?";
+          $stmt = $conn->stmt_init();
+          if (!$stmt->prepare($sql)) {
+            echo "failed to prepare";
+          } else {
+  
+            // Bind user input to statement
+            $stmt->bind_param('ss', $CustomerName, $id);
+  
+            // Execute statement and commit transaction
+            $stmt->execute();
+            $conn->commit();
+          }
+        }
+      }
+      
         // Prepare SQL using Parameterized Form (Safe from SQL Injections)
         // $sql = "SELECT year,make,model,VIN FROM Vehicle V " .
         //     "INNER JOIN Registration R ON V.make = R.make WHERE VIN = ?";
@@ -136,13 +167,28 @@ if ($id === null) {
             echo "</table>";
             echo "</div>";
 
-            echo "<div id=\"button-helper\">";
-            echo "<form action=\"update_name.php?id=" . $VIN ."\"> <button type=\"submit\" class=\"btn btn-primary\">Update Name</button> </form>";
-            echo "</div>";
+            // echo "<div id=\"button-helper\">";
+            // echo "<form action=\"update_name.php?id=" . $VIN ."\"> <button type=\"submit\" class=\"btn btn-primary\">Update Name</button> </form>";
+            // echo "</div>";
+
         ?>
+            <div id="text-input">
+                <form name="form" action="" method="post">
+                    <table>
+                        <tr>
+                            <td>
+                                <input class="form-control mr-sm-2" placeholder="Enter Name" type="text" name="VIN-num" id="VIN-num" value="">
+                            </td>
+                            <td>
+                                <button type="submit" class="btn btn-primary">Update</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
         <?php
 
-            
+
         }
 
         $conn->close();
