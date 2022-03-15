@@ -70,7 +70,7 @@ require_once 'config.inc.php';
       else {
 
         /* perform search using safe parameterized sql */
-        $sql = "SELECT year,make,model,VIN FROM Vehicle WHERE VIN LIKE '%?%'";
+        $sql = "SELECT year,make,model,VIN FROM Vehicle WHERE VIN LIKE '%$VIN%'";
         $stmt = $conn->stmt_init();
         if (!$stmt->prepare($sql)) {
           echo "failed to prepare";
