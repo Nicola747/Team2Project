@@ -100,11 +100,6 @@ require_once 'config.inc.php';
         echo "</tbody>";
         echo "</table>";
         echo "</div>";
-
-        echo "<form action=\"filter_registrations.php?id=\" method=\"post\">
-            <input class=\"form-control mr-sm-2\" type=\"password\" placeholder=\"Filter\" name=\"psw\">
-            <button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Search</button>
-        </form>";
     }
 
 	// Close Connection
