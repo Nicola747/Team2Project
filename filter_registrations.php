@@ -40,14 +40,14 @@ require_once 'config.inc.php';
         else {
 			
             /* perform update using safe parameterized sql */
-            $sql = "SELECT * FROM Vehicle WHERE VIN LIKE '%?%'";
+            $sql = "SELECT year,make,model,VIN FROM Vehicle WHERE VIN LIKE '%?%'";
             $stmt = $conn->stmt_init();
             if (!$stmt->prepare($sql)) {
                 echo "failed to prepare";
             } else {
 				
 				// Bind user input to statement
-                $stmt->bind_param('ss', $VIN,$id);
+                $stmt->bind_param($year,$make,$model,$VIN);
 				
 				// Execute statement and commit transaction
                 $stmt->execute();
@@ -57,7 +57,7 @@ require_once 'config.inc.php';
     }
 
     /* Refresh the Data */
-    $sql = "SELECT * FROM Vehicle WHERE VIN LIKE '%?%'";
+    $sql = "SELECT year,make,model,VIN FROM Vehicle WHERE VIN LIKE '%?%'";
     $stmt = $conn->stmt_init();
     if (!$stmt->prepare($sql)) {
         echo "failed to prepare";
