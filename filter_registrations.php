@@ -123,7 +123,7 @@ require_once 'config.inc.php';
 
     <form name="form" action="" method="post">
                     <input type="text" name="VIN-num" id="VIN-num" value="">
-                    <button type="submit">Filter</button>
+                    <button type="submit" class="btn btn-primary">Filter</button>
                 </form>
     <?php
 
