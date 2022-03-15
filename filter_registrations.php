@@ -75,7 +75,6 @@ require_once 'config.inc.php';
         if (!$stmt->prepare($sql)) {
           echo "failed to prepare";
         } else {
-
         }
       }
     }
@@ -121,10 +120,12 @@ require_once 'config.inc.php';
     }
     ?><br><br>
 
-    <form name="form" action="" method="post">
-                    <input type="text" name="VIN-num" id="VIN-num" value="">
-                    <button type="submit" class="btn btn-primary">Filter</button>
-                </form>
+    <div id="text-input">
+      <form name="form" action="" method="post">
+        <input type="text" name="VIN-num" id="VIN-num" value="">
+        <button type="submit" class="btn btn-primary">Filter</button>
+      </form>
+    </div>
     <?php
 
 
