@@ -72,7 +72,7 @@ require_once 'config.inc.php';
       $VIN_num = $_GET['VIN-num'];
 
         /* perform search using safe parameterized sql */
-        $sql = "SELECT year,make,model,VIN FROM Vehicle WHERE VIN LIKE '%VIN_num%'";
+        $sql = "SELECT year,make,model,VIN FROM Vehicle WHERE VIN LIKE '%VIN-num%'";
         $stmt = $conn->stmt_init();
         if (!$stmt->prepare($sql)) {
           echo "failed to prepare";
@@ -105,7 +105,7 @@ require_once 'config.inc.php';
     }
 
     /* Refresh the Data */
-    $sql = "SELECT year,make,model,VIN FROM Vehicle WHERE VIN LIKE '%?%'";
+    $sql = "SELECT year,make,model,VIN FROM Vehicle WHERE VIN LIKE '%VIN-num%'";
     echo "a";
     echo $VIN_num;
     $stmt = $conn->stmt_init();
@@ -117,7 +117,7 @@ require_once 'config.inc.php';
       $stmt->execute();
 
       // Loop Through Result
-      $stmt->bind_result($year, $make, $model, $VIN_num);
+      $stmt->bind_result($year, $make, $model, $VIN);
       // echo "<ul>";
       echo "<div id=\"vehicle-table\">";
       echo "<table class=\"table table-striped table-bordered table-hover\">";
@@ -159,7 +159,7 @@ require_once 'config.inc.php';
     <button type="submit">Filter</button>
     </form> -->
     <form name="form" action="" method="get">
-                    <input type="text" name="VIN-num" id="VIN-num" value="VIN">
+                    <input type="text" name="VIN-num" id="VIN-num" value="">
                     <button type="submit">Filter</button>
                 </form>
     <?php
