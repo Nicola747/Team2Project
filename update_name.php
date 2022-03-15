@@ -94,7 +94,7 @@ require_once 'config.inc.php';
     if (!$stmt->prepare($sql)) {
       echo "failed to prepare";
     } else {
-      // $stmt->bind_param('s', $id);
+      $stmt->bind_param('s', $id);
       $stmt->execute();
       $stmt->bind_result($VIN, $year, $make, $model, $color, $weightLbs, $vehicleType, $fuelType, $registrationNumber, $taxValue, $name, $certificationID, $iDDOL);
       echo "<br><br>";

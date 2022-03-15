@@ -74,14 +74,16 @@ if ($id === null) {
         // $sql = "SELECT year,make,model,VIN FROM Vehicle V " .
         //     "INNER JOIN Registration R ON V.make = R.make WHERE VIN = ?";
 
-        $sql = "SELECT V.*,registrationNumber,taxValue,name,certificationID,iDDOL FROM Vehicle V INNER JOIN Registration R ON V.VIN = R.VIN INNER JOIN Owner O ON R.ownerIdNumber = O.idNumber INNER JOIN DriverLicenseID DL ON O.idNumber = DL.idNumber WHERE R.VIN = ?";
+        $sql = "SELECT V.*,registrationNumber,taxValue,name,certificationID,iDDOL FROM Vehicle V 
+        INNER JOIN Registration R ON V.VIN = R.VIN INNER JOIN Owner O ON R.ownerIdNumber = O.idNumber 
+        INNER JOIN DriverLicenseID DL ON O.idNumber = DL.idNumber WHERE R.VIN = ?";
         $stmt = $conn->stmt_init();
         if (!$stmt->prepare($sql)) {
             echo "failed to prepare";
         } else {
 
             // Bind Parameters from User Input
-            // $stmt->bind_param('s', $id);
+            $stmt->bind_param('s', $id);
 
             // Execute the Statement
             $stmt->execute();
