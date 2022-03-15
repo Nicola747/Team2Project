@@ -69,17 +69,18 @@ require_once 'config.inc.php';
       //   echo "<div><i>Specify a new name</i></div>";
       else {
 
-      $VIN_num = $_GET['VIN-num'];
+      // $VIN_num = $_GET['VIN-num'];
+      $VIN_num = "JS3";
 
         /* perform search using safe parameterized sql */
-        $sql = "SELECT year,make,model,VIN FROM Vehicle WHERE VIN LIKE '%?%'";
+        $sql = "SELECT year,make,model,VIN FROM Vehicle WHERE VIN LIKE '%$VIN_num%'";
         $stmt = $conn->stmt_init();
         if (!$stmt->prepare($sql)) {
           echo "failed to prepare";
         } else {
 
           // Bind user input to statement
-          $stmt->bind_param('ss',$VIN_num);
+          $stmt->bind_param('ss',$VIN);
 
           // Loop Through Result
           $stmt->bind_result($year, $make, $model, $VIN_num);
@@ -105,7 +106,7 @@ require_once 'config.inc.php';
     }
 
     /* Refresh the Data */
-    $sql = "SELECT year,make,model,VIN FROM Vehicle WHERE VIN LIKE '%VIN-num%'";
+    $sql = "SELECT year,make,model,VIN FROM Vehicle WHERE VIN LIKE '%$VIN_num%'";
     $stmt = $conn->stmt_init();
     if (!$stmt->prepare($sql)) {
       echo "failed to prepare";
