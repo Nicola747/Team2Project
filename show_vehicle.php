@@ -81,7 +81,7 @@ if ($id === null) {
         } else {
 
             // Bind Parameters from User Input
-            $stmt->bind_param('s', $id);
+            // $stmt->bind_param('s', $id);
 
             // Execute the Statement
             $stmt->execute();
