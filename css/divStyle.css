@@ -23,3 +23,12 @@
     margin: 0 auto;
     pointer-events: all;
 }
+
+body.modal-open .modal {
+    display: flex !important;
+    height: 100%;
+}
+
+body.modal-open .modal .modal-dialog {
+    margin: auto;
+}
