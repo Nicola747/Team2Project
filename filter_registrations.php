@@ -106,6 +106,8 @@ require_once 'config.inc.php';
 
     /* Refresh the Data */
     $sql = "SELECT year,make,model,VIN FROM Vehicle WHERE VIN LIKE '%$VIN_num%'";
+    echo "a";
+    echo $VIN_num;
     $stmt = $conn->stmt_init();
     if (!$stmt->prepare($sql)) {
       echo "failed to prepare";
