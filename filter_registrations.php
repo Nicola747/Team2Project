@@ -118,7 +118,7 @@ require_once 'config.inc.php';
 
       // echo "</div>";
     }
-    ?><br><br>
+    ?>
 
     <div id="text-input">
       <form name="form" action="" method="post">
