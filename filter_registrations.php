@@ -116,7 +116,7 @@ require_once 'config.inc.php';
       echo "</tbody>";
       echo "</table>";
 
-      echo "</div>";
+      // echo "</div>";
     }
     ?><br><br>
 
@@ -126,6 +126,7 @@ require_once 'config.inc.php';
         <button type="submit" class="btn btn-primary">Filter</button>
       </form>
     </div>
+  </div>
     <?php
 
 
