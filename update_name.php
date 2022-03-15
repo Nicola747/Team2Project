@@ -97,16 +97,60 @@ require_once 'config.inc.php';
       // $stmt->bind_param('s', $id);
       $stmt->execute();
       $stmt->bind_result($VIN, $year, $make, $model, $color, $weightLbs, $vehicleType, $fuelType, $registrationNumber, $taxValue, $name, $certificationID, $iDDOL);
+      echo "<br><br>";
+            echo "<div id=\"vehicle-info-table\">";
+            echo "<table class=\"table table-striped table-bordered table-hover\">";
+            echo "<thead class=theat-dark id=\"thead-dark\">";
+            echo "<tr>";
+            echo "<th scope=\"col\">VIN Number</th>";
+            echo "<th scope=\"col\">Year</th>";
+            echo "<th scope=\"col\">Make</th>";
+            echo "<th scope=\"col\">Model</th>";
+            echo "<th scope=\"col\">Color</th>";
+            echo "<th scope=\"col\">Weight (lbs)</th>";
+            echo "<th scope=\"col\">Vehicle Type</th>";
+            echo "<th scope=\"col\">Fuel Type</th>";
+            echo "<th scope=\"col\">Registration Number</th>";
+            echo "<th scope=\"col\">Tax Value</th>";
+            echo "<th scope=\"col\">Name</th>";
+            echo "<th scope=\"col\">Certification ID</th>";
+            echo "<th scope=\"col\">DOL ID</th>";
+            echo "</tr>";
+            echo "</thead>";
+            echo "<tbody>";
+
+
+            while ($stmt->fetch()) {
+                echo "<tr>";
+                echo '<td>' . $VIN . '</td>';
+                echo '<td>' . $year . '</td>';
+                echo '<td>' . $make . '</td>';
+                echo '<td>' . $model . '</td>';
+                echo '<td>' . $color . '</td>';
+                echo '<td>' . $weightLbs . '</td>';
+                echo '<td>' . $vehicleType . '</td>';
+                echo '<td>' . $fuelType . '</td>';
+                echo '<td>' . $registrationNumber . '</td>';
+                echo '<td>' . $taxValue . '</td>';
+                echo '<td>' . $name . '</td>';
+                echo '<td>' . $certificationID . '</td>';
+                echo '<td>' . $iDDOL . '</td>';
+                echo "</tr>";
+            }
+
+            echo "</tbody>";
+            echo "</table>";
+            echo "</div>";
     ?>
       <div id="text-input">
         <form name="form" action="" method="post">
           <table>
             <tr>
               <td>
-                <input class="form-control mr-sm-2" placeholder="Enter VIN" type="text" name="VIN-num" id="VIN-num" value="">
+                <input class="form-control mr-sm-2" placeholder="Enter Name" type="text" name="VIN-num" id="VIN-num" value="">
               </td>
               <td>
-                <button type="submit" class="btn btn-primary">Filter</button>
+                <button type="submit" class="btn btn-primary">Update</button>
               </td>
             </tr>
           </table>
