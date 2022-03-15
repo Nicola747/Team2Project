@@ -29,6 +29,10 @@
 }
 
 #text-input {
-    margin: auto;
+    margin-bottom: 1px;
+    margin-left: 1px;
     width: 200px;
+    height: 100px;
+    position: fixed;
+    bottom: 0;
 }

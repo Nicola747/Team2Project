@@ -100,7 +100,6 @@ require_once 'config.inc.php';
         // echo "</ul>";
         echo "</tbody>";
         echo "</table>";
-        echo "</div>";
 
         echo "<div id=\"text-input\">";
         echo "<form action=\"filter_registrations.php?id=\" method=\"post\">
@@ -108,6 +107,10 @@ require_once 'config.inc.php';
             <button class=\"btn btn-outline-success my-2 my-sm-0\" type=\"submit\">Search</button>
         </form>";
         echo "</div>";
+        
+        echo "</div>";
+
+        
     }
 
 	// Close Connection
